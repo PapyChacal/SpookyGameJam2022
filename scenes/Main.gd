@@ -1,7 +1,7 @@
 extends Node2D
 
 var Fmod : FmodNative = FmodNative.new()
-const placeholder = "event:/Musics/Placeholder"
+const placeholder = "event:/UI/Click"
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -25,7 +25,7 @@ func _ready():
 
 	# play some events
 	#Fmod.play_one_shot("event:/Musics/Placeholder", self)
-	var event = Fmod.create_event_instance(placeholder)
+#	var event = Fmod.create_event_instance(placeholder)
 	Fmod.play_one_shot(placeholder, self)
 
 
