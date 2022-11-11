@@ -8,14 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Control",
+"class": "Choices",
+"language": "GDScript",
+"path": "res://scenes/Choices.gd"
+} ]
 _global_script_class_icons={
-
+"Choices": ""
 }
 
 [application]
 
 config/name="SpookyGameJam2022"
+run/main_scene="scenes/Main.tscn"
 config/icon="res://icon.png"
 
 [rendering]
