@@ -12,10 +12,28 @@ _global_script_classes=[ {
 "base": "Control",
 "class": "Choices",
 "language": "GDScript",
-"path": "res://scenes/Choices.gd"
+"path": "res://scripts/Choices.gd"
+}, {
+"base": "Reference",
+"class": "description",
+"language": "GDScript",
+"path": "res://scripts/description.gd"
+}, {
+"base": "description",
+"class": "dialogue",
+"language": "GDScript",
+"path": "res://scripts/dialogue.gd"
+}, {
+"base": "Reference",
+"class": "reponse",
+"language": "GDScript",
+"path": "res://scripts/reponse.gd"
 } ]
 _global_script_class_icons={
-"Choices": ""
+"Choices": "",
+"description": "",
+"dialogue": "",
+"reponse": ""
 }
 
 [application]
