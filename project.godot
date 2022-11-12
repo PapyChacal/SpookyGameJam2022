@@ -14,6 +14,26 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Choices.gd"
 }, {
+"base": "Node",
+"class": "FmodNative",
+"language": "NativeScript",
+"path": "res://addons/fmod/Fmod.gdns"
+}, {
+"base": "SoundButton",
+"class": "PlayButton",
+"language": "GDScript",
+"path": "res://scripts/Buttons/PlayButton.gd"
+}, {
+"base": "SoundButton",
+"class": "QuitButton",
+"language": "GDScript",
+"path": "res://scripts/Buttons/QuitButton.gd"
+}, {
+"base": "Button",
+"class": "SoundButton",
+"language": "GDScript",
+"path": "res://scripts/Buttons/SoundButton.gd"
+}, {
 "base": "Reference",
 "class": "description",
 "language": "GDScript",
@@ -31,28 +51,13 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Choices": "",
+"FmodNative": "",
+"PlayButton": "",
+"QuitButton": "",
+"SoundButton": "",
 "description": "",
 "dialogue": "",
 "reponse": ""
-"base": "Node",
-"class": "FmodNative",
-"language": "NativeScript",
-"path": "res://addons/fmod/Fmod.gdns"
-}, {
-"base": "SoundButton",
-"class": "QuitButton",
-"language": "GDScript",
-"path": "res://scripts/QuitButton.gd"
-}, {
-"base": "Button",
-"class": "SoundButton",
-"language": "GDScript",
-"path": "res://scripts/Buttons/SoundButton.gd"
-} ]
-_global_script_class_icons={
-"FmodNative": "",
-"QuitButton": "",
-"SoundButton": ""
 }
 
 [application]

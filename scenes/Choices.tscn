@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/Choices.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Buttons/SoundButton.gd" type="Script" id=2]
 
 [node name="Choices" type="Control"]
 anchor_right = 1.0
@@ -55,6 +56,7 @@ margin_bottom = 58.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Réponse zen"
+script = ExtResource( 2 )
 
 [node name="Choice2" type="Button" parent="HBoxContainer/GridContainer"]
 margin_left = 141.0
@@ -63,6 +65,7 @@ margin_bottom = 58.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Aggression verbale"
+script = ExtResource( 2 )
 
 [node name="Choice3" type="Button" parent="HBoxContainer/GridContainer"]
 margin_top = 62.0
@@ -71,6 +74,7 @@ margin_bottom = 120.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Angoisse totale"
+script = ExtResource( 2 )
 
 [node name="Choice4" type="Button" parent="HBoxContainer/GridContainer"]
 margin_left = 141.0
@@ -80,6 +84,7 @@ margin_bottom = 120.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "La réponse D"
+script = ExtResource( 2 )
 [connection signal="choice_made" from="." to="." method="_on_choice"]
 [connection signal="pressed" from="HBoxContainer/GridContainer/Choice1" to="." method="_on_choice1"]
 [connection signal="pressed" from="HBoxContainer/GridContainer/Choice2" to="." method="_on_choice2"]

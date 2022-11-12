@@ -20,6 +20,7 @@ func _process(_delta):
 	if (not le_dialogue is Interactions.dialogue_type) \
 	   and le_dialogue != null \
 	   and Input.is_action_just_released("ui_select"):
+		Fmod.play_one_shot("event:/UI/Validate", self)
 		set_description(le_dialogue.next)
 
 func _on_choice(choice : int):
