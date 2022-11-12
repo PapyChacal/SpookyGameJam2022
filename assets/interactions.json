@@ -1,5 +1,13 @@
 {
-  "CC1": {
+"Des0": {
+    "personne_parlant": "",
+    "text": "Doesn't sound like a good idea...",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
+  },  
+
+"CC1": {
     "personne_parlant": "Tom",
     "text": "Pfff... If you keep ignoring people, you won't make any friends, you know",
     "stress_add": 10,
@@ -8,14 +16,14 @@
   },
   "AA1": {
     "personne_parlant": "Tom",
-    "text": "You little...!!!",
+    "text": "Wow... Feels weird when you're confident like that.",
     "stress_add": 0,
-    "energie_add": 0,
+    "energie_add": -1,
     "next": ""
   },
   "BB1": {
     "personne_parlant": "Tom",
-    "text": "Wow... Feels weird when you're confident like that.",
+    "text": "You little...!!!",
     "stress_add": 0,
     "energie_add": 0,
     "next": ""
@@ -28,17 +36,209 @@
     "energie_add": 0,
     "possible_reponses": [
       {
-        "text": "",
+        "text": "No answer",
         "next": "CC1"
       },
       {
-        "text": "Please, just f*ck off.",
+        "text": "*smiling* Oh, I'm so happy to finally grow up and meet new adult friends!'",
         "next": "AA1"
       },
       {
-          "text": "*smiling* Oh, I'm so happy to finally grow up and meet new adult friends!",
+          "text": "Please, just f*ck off.",
           "next": "BB1"
       }
     ]
+  },
+  
+  
+  "Des7": {
+    "personne_parlant": "Mother",
+    "text": "Oh, ask your brother to give you some money for today. Please don't skip lunch!",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
+  },
+  "CC2": {
+    "personne_parlant": "Mother",
+    "text": "You're not awake yet, are you? Let's hear some music then.",
+    "stress_add": 10,
+    "energie_add": 0,
+    "next": "Des7"
+  },
+  "AA2": {
+    "personne_parlant": "Mother",
+    "text": "Thanks! I'm happy we both love good music.",
+    "stress_add": 10,
+    "energie_add": -1,
+    "next": "Des7"
+  },
+  "BB2": {
+    "personne_parlant": "Mother",
+    "text": "Fine, let's spend some time staring at each other quietly...",
+    "stress_add": 0,
+    "energie_add": -1,
+    "next": "Des7"
+  },
+  "Dial2": {
+    "personne_parlant": "Mother",
+    "text": "Hello! It's nice we have some time together before your big day! Such a big day. You don't mind if I turn on the radio, do you?",
+    "stress_add": 0,
+    "energie_add": 0,
+    "possible_reponses": [
+      {
+        "text": "No answer",
+        "next": "CC2"
+      },
+      {
+        "text": "No, nice idea!",
+        "next": "AA2"
+      },
+      {
+          "text": "I really prefer silence.",
+          "next": "BB2"
+      }
+    ]
+  },
+
+"CC3": {
+    "personne_parlant": "Mother",
+    "text": "Nice, just ignore your poor mother.",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
+  },
+  "AA3": {
+    "personne_parlant": "Mother",
+    "text": "Well, sit with me, my love.",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": "Dial4"
+  },
+  "BB3": {
+    "personne_parlant": "Mother",
+    "text": "Fine, I don't take it personnally.",
+    "stress_add": 0,
+    "energie_add": -1,
+    "next": ""
+  },
+
+  "Dial3": {
+    "personne_parlant": "Mother",
+    "text": "Oh yes, I was keeping this chocolate bar for you. Eat it now while having a little chat with your mum.",
+    "stress_add": 0,
+    "energie_add": 0,
+    "possible_reponses": [
+      {
+        "text": "No answer",
+        "next": "CC3"
+      },
+      {
+        "text": "OK...",
+        "next": "AA3"
+      },
+      {
+          "text": "No mum, I'm saving it for later today.",
+          "next": "BB3"
+      }
+    ]
+  },
+
+
+  "CC4": {
+    "personne_parlant": "Mother",
+    "text": "...",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": "Dial5"
+  },
+  "AA4": {
+    "personne_parlant": "Mother",
+    "text": "...",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
+  },
+  "BB3": {
+    "personne_parlant": "Mother",
+    "text": "It's brave to admit it. And you SHOULD be scared. You can be so \"different\" sometimes.",
+    "stress_add": 10,
+    "energie_add": 0,
+    "next": ""
+  },
+  "DD4": {
+    "personne_parlant": "Mother",
+    "text": "Ah ah, that's my child... my good child...",
+    "stress_add": 0,
+    "energie_add": -1,
+    "next": ""
+  },
+
+  "Dial4": {
+    "personne_parlant": "Mother",
+    "text": "So... How do you feel about today?",
+    "stress_add": 0,
+    "energie_add": 0,
+    "possible_reponses": [
+      {
+        "text": "No answer",
+        "next": "CC4"
+      },
+      {
+        "text": "I don't wanna talk about it.",
+        "next": "AA4"
+      },
+      {
+          "text": "I am... scared.",
+          "next": "BB4"
+      },
+      {
+          "text": "*winking* It should be totally ok! Looking forward to it!",
+          "next": "DD4"
+      }
+    ]
+  },
+
+
+  "CC5": {
+    "personne_parlant": "Mother",
+    "text": "I don't even know why I'm expecting a reaction from you.",
+    "stress_add": 10,
+    "energie_add": 0,
+    "next": ""
+  },
+  "AA5": {
+    "personne_parlant": "Mother",
+    "text": "...",
+    "stress_add": 10,
+    "energie_add": 0,
+    "next": "You know I'm telling the truth. You are disrespectful and you KNOW it."
+  },
+  "BB5": {
+    "personne_parlant": "Mother",
+    "text": "And I love you too, honey. So much...",
+    "stress_add": 0,
+    "energie_add": -1,
+    "next": ""
+  },
+
+  "Dial5": {
+    "personne_parlant": "Mother",
+    "text": "Sometimes I wonder why you can consider that no answer is an answer. Really disrespectful.",
+    "stress_add": 0,
+    "energie_add": 0,
+    "possible_reponses": [
+      {
+        "text": "No answer",
+        "next": "CC5"
+      },
+      {
+        "text": "Please stop it...",
+        "next": "AA5"
+      },
+      {
+          "text": "I admit I should work on this, mum. You know I love you though.",
+          "next": "BB5"
+      }    
+      ]
   }
 }
