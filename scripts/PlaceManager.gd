@@ -2,7 +2,7 @@ extends Node2D
 class_name PlaceManager
 
 var scenes : Dictionary = {
-	'Room' : preload("res://scenes/Chambre.tscn")
+	'Room' : preload("res://scenes/Room.tscn")
 }
 
 var places : Dictionary = {

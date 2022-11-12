@@ -2,14 +2,14 @@
 
 [ext_resource path="res://scripts/Interaction Objets/ShinyHoverSprite.gd" type="Script" id=1]
 [ext_resource path="res://scripts/Interaction Objets/ShinyToggleSprite.gd" type="Script" id=2]
-[ext_resource path="res://assets/Room/chambre.png" type="Texture" id=3]
-[ext_resource path="res://assets/livre_brille.png" type="Texture" id=4]
-[ext_resource path="res://assets/Room/smartphone.png" type="Texture" id=5]
-[ext_resource path="res://assets/Room/smartphone_brille1.png" type="Texture" id=6]
-[ext_resource path="res://assets/Room/ordi_brille.png" type="Texture" id=7]
-[ext_resource path="res://assets/livre.png" type="Texture" id=8]
-[ext_resource path="res://assets/Room/porte.png" type="Texture" id=9]
-[ext_resource path="res://assets/Room/smartphone_brille2.png" type="Texture" id=10]
+[ext_resource path="res://assets/Room/porte.png" type="Texture" id=3]
+[ext_resource path="res://assets/Room/smartphone_brille2.png" type="Texture" id=4]
+[ext_resource path="res://assets/livre.png" type="Texture" id=5]
+[ext_resource path="res://assets/Room/ordi_brille.png" type="Texture" id=6]
+[ext_resource path="res://assets/Room/smartphone_brille1.png" type="Texture" id=7]
+[ext_resource path="res://assets/livre_brille.png" type="Texture" id=8]
+[ext_resource path="res://assets/Room/smartphone.png" type="Texture" id=9]
+[ext_resource path="res://assets/Room/chambre.png" type="Texture" id=10]
 
 [node name="Room" type="Control"]
 __meta__ = {
@@ -18,48 +18,49 @@ __meta__ = {
 
 [node name="room_background" type="Sprite" parent="."]
 scale = Vector2( 0.533327, 0.555562 )
-texture = ExtResource( 3 )
+texture = ExtResource( 10 )
 centered = false
 
-[node name="door" type="Sprite" parent="."]
-position = Vector2( 848.791, 155.075 )
-texture = ExtResource( 9 )
+[node name="porte" type="Sprite" parent="."]
+position = Vector2( 849.253, 358.801 )
+scale = Vector2( 0.533327, 0.555562 )
+texture = ExtResource( 3 )
 script = ExtResource( 1 )
 
 [node name="computer" type="Sprite" parent="."]
 visible = false
 position = Vector2( 327.248, 445.901 )
 scale = Vector2( 0.402431, 0.421189 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 script = ExtResource( 2 )
 
 [node name="smartphone" type="Sprite" parent="."]
 position = Vector2( 366.4, 356.674 )
 scale = Vector2( 0.393284, 0.517827 )
-texture = ExtResource( 5 )
+texture = ExtResource( 9 )
 
 [node name="smartphone_shiny_1" type="Sprite" parent="smartphone"]
 visible = false
 position = Vector2( -1.58228, -2.86133 )
 scale = Vector2( 1, 0.953717 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 script = ExtResource( 1 )
 
 [node name="smartphone_shiny_2" type="Sprite" parent="smartphone"]
 visible = false
 position = Vector2( 0.0202637, -3.22296 )
-texture = ExtResource( 10 )
+texture = ExtResource( 4 )
 offset = Vector2( 0, 8 )
 script = ExtResource( 1 )
 
 [node name="book" type="Sprite" parent="."]
 position = Vector2( 490.675, 301.007 )
 scale = Vector2( 0.35794, 0.516887 )
-texture = ExtResource( 8 )
+texture = ExtResource( 5 )
 
 [node name="book_shiny" type="Sprite" parent="book"]
 visible = false
 position = Vector2( 46.6372, 9.99023 )
-texture = ExtResource( 4 )
+texture = ExtResource( 8 )
 offset = Vector2( -45, -8 )
 script = ExtResource( 1 )

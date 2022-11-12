@@ -1,4 +1,4 @@
-extends Sprite
+extends elementSprite
 class_name ShinyHoverSprite
 
 func _ready():
