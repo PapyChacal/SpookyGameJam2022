@@ -12,6 +12,9 @@ func _ready():
 	
 
 func update_energy(n : int):
+	for c in energy.get_children():
+		energy.remove_child(c)
+		c.queue_free()
 	energy_icon.load('res://assets/energy.png')
 	for _i in range(n):
 		var icon = TextureRect.new()
@@ -24,6 +27,5 @@ func update_stress(s : float):
 	gauge.value = s
 
 func _process(delta):
-	update_stress(GameSt)
-	if gauge.value == gauge.max_value:
-		gauge.value = gauge.min_value
+	update_stress(GameState.stress)
+	update_energy(GameState.energy)

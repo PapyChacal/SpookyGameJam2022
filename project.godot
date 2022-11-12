@@ -37,7 +37,7 @@ _global_script_classes=[ {
 "base": "Control",
 "class": "UI",
 "language": "GDScript",
-"path": "res://scenes/UI.gd"
+"path": "res://scripts/UI.gd"
 }, {
 "base": "Reference",
 "class": "description",
@@ -77,6 +77,7 @@ config/icon="res://assets/energy.png"
 Fmod="*res://addons/fmod/Fmod.gd"
 FModInit="*res://scripts/FModInit.gd"
 Interactions="*res://scripts/Interactions.gd"
+GameState="*res://scripts/GameState.gd"
 
 [display]
 
