@@ -7,7 +7,7 @@ extends Node
 func _ready():
 		# set up FMOD
 	Fmod.set_software_format(0, Fmod.FMOD_SPEAKERMODE_STEREO, 0)
-	Fmod.init(1024, Fmod.FMOD_STUDIO_INIT_NORMAL, Fmod.FMOD_INIT_NORMAL)
+	Fmod.init(1024, Fmod.FMOD_STUDIO_INIT_LIVEUPDATE, Fmod.FMOD_INIT_NORMAL)
 	
 	Fmod.load_bank("res://Sounds/Desktop/Master.strings.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
 	Fmod.load_bank("res://Sounds/Desktop/Main.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
