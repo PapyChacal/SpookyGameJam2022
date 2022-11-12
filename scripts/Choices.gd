@@ -45,8 +45,12 @@ func _process(_delta):
 			
 func _on_choice(choice : int):
 	timer.stop()
+	npr_gauge.value = 1.0
 	var d = GameState.le_dialogue
-	set_description(d.possible_reponses[choice].next)
+	if d != null :
+		if d is Interactions.dialogue_type:
+			set_description(d.possible_reponses[choice].next)
+	
 	var c = GameState.le_dialogue
 	if c != null:
 		GameState.energy += c.energie_add
@@ -65,6 +69,8 @@ func _on_choice3():
 	emit_signal("choice_made", 3)
 	
 func set_description(id : String):
+	timer.stop()
+	npr_gauge.value = 1.0
 	if id == "":
 		GameState.le_dialogue = null
 		self.set_visible(false)
@@ -90,7 +96,8 @@ func set_description(id : String):
 		buttons[i].set_visible(true)
 	for i in range(nrep, 3):
 		buttons[i].set_visible(false)
-		
+	
+	if is_question:
+		cur_rep = 0
 	$VBox/HBoxTop/VBoxContainer.set_visible(is_question)
 	$VBox/HBox/HBox.set_visible(is_question)
-	
