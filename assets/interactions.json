@@ -1,31 +1,43 @@
 {
-  "Description 1.1": {
-    "personne_parlant": "Michel",
-    "text": "Eh Manu ! Tu descends ?",
-    "stress_add": 0,
-    "energie_add": 0,
-    "next": "Description 1.2"
-  },
-  "Description 1.2": {
-    "personne_parlant": "Manu",
-    "text": "Pour quoi faire ?",
+  "CC1": {
+    "personne_parlant": "Tom",
+    "text": "Pfff... If you keep ignoring people, you won't make any friends, you know",
     "stress_add": 10,
     "energie_add": 0,
-    "next": "Dialogue 1"
+    "next": ""
   },
-  "Dialogue 1": {
-    "personne_parlant": "Michel",
-    "text": "Eh Manu ! Tu descends ?",
+  "AA1": {
+    "personne_parlant": "Tom",
+    "text": "You little...!!!",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
+  },
+  "BB1": {
+    "personne_parlant": "Tom",
+    "text": "Wow... Feels weird when you're confident like that.",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
+  },
+
+  "Dial1": {
+    "personne_parlant": "Tom",
+    "text": "Ah ah, you're finally awake?! You look terrible. I can't believe you're going to college already. You still look like a child to me... and to everyone else! Ah ah!",
     "stress_add": 0,
     "energie_add": 0,
     "possible_reponses": [
       {
-        "text": "Pour quoi faire ?",
-        "next": "Description 1.1"
+        "text": "",
+        "next": "CC1"
       },
       {
-        "text": "Ah je peux pas !",
-        "next": ""
+        "text": "Please, just f*ck off.",
+        "next": "AA1"
+      },
+      {
+          "text": "*smiling* Oh, I'm so happy to finally grow up and meet new adult friends!",
+          "next": "BB1"
       }
     ]
   }

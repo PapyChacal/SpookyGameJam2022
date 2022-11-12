@@ -12,9 +12,9 @@ onready var buttons : Array = [
 signal choice_made
 
 func _ready():
-	print(Interactions.lines["Description 1.1"])
-	print(Interactions.lines["Description 1.1"] == null)
-	set_description("Description 1.1")
+	print(Interactions.lines["Dial1"])
+	print(Interactions.lines["Dial1"] == null)
+	set_description("Dial1")
 
 func _process(_delta):
 	if (not le_dialogue is Interactions.dialogue_type) \
