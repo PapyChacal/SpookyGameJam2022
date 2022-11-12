@@ -22,7 +22,7 @@
   },
 "Des4": {
     "personne_parlant": "",
-    "text": "This plant is possibly the most beautiful thing in your house.",
+    "text": "This plant is possibly the most beautiful living being in your house.",
     "stress_add": 0,
     "energie_add": 0,
     "next": ""
@@ -31,7 +31,7 @@
     "personne_parlant": "",
     "text": "Time to take a break and breathe.",
     "stress_add": 0,
-    "energie_add": 0,
+    "energie_add": 1,
     "next": ""
     }, 
  "Des6": {
@@ -92,7 +92,7 @@
   },
 "Des13": {
     "personne_parlant": "Mother",
-    "text": "I HATE YOU SO MUCH I HATE YOU SO MUCH",
+    "text": "I HATE YOU SO MUCH I HATE YOU SO MUCH I HATE YOU SO MUCH I HATE YOU SO MUCH",
     "stress_add": 0,
     "energie_add": 0,
     "next": "Des13"
@@ -125,6 +125,57 @@
     "stress_add": 0,
     "energie_add": 0,
     "next": ""
+  },
+
+"Dial12": {
+    "personne_parlant": "",
+    "text": "Your phone. Hard to know if it causes or solves problems.",
+    "stress_add": 0,
+    "energie_add": 0,
+    "possible_reponses": [
+      {
+        "text": "Take the phone with you",
+        "next": ""
+      },
+      {
+        "text": "Leave it here",
+        "next": ""
+      }
+    ]
+  },
+  
+"Dial13": {
+    "personne_parlant": "",
+    "text": "Your favorite book. Imaginary worlds are much sweeter.",
+    "stress_add": 0,
+    "energie_add": 0,
+    "possible_reponses": [
+      {
+        "text": "Take the book with you",
+        "next": ""
+      },
+      {
+        "text": "Leave it her",
+        "next": ""
+      }
+    ]
+  },
+
+"Dial14": {
+    "personne_parlant": "",
+    "text": "Seems like pretty mature content... Should you read it?",
+    "stress_add": 0,
+    "energie_add": 0,
+    "possible_reponses": [
+      {
+        "text": "Yes!",
+        "next": ""
+      },
+      {
+        "text": "No...",
+        "next": ""
+      }
+    ]
   },
 
   "Dial1": {
