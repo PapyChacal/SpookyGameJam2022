@@ -12,6 +12,8 @@ func _ready():
 	Fmod.load_bank("res://Sounds/Desktop/Master.strings.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
 	Fmod.load_bank("res://Sounds/Desktop/Main.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
 	Fmod.load_bank("res://Sounds/Desktop/Master.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
+	
+	Fmod.add_listener(0,self)
 
 # Tick FMod every, well, tick
 func _process(delta):
