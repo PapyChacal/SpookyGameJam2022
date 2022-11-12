@@ -6,6 +6,104 @@
     "energie_add": 0,
     "next": ""
   },  
+"Des3": {
+    "personne_parlant": "",
+    "text": "Posters and drawings of badass elves and androids. Inspiring.",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
+  },  
+"Des31": {
+    "personne_parlant": "",
+    "text": "This good friend will not be your sidekick for today's adventure, but will happily welcome you when this awful day is over.",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
+  },
+"Des4": {
+    "personne_parlant": "",
+    "text": "This plant is possibly the most beautiful living being in your house.",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
+    },
+"Des5": {
+    "personne_parlant": "",
+    "text": "Time to take a break and breathe.",
+    "stress_add": 0,
+    "energie_add": 1,
+    "next": ""
+    }, 
+ "Des6": {
+    "personne_parlant": "",
+    "text": "An old radio frequently used by your mum to spread awful music in the air.",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
+    },
+"Des61": {
+    "personne_parlant": "Mother",
+    "text": "You know, it will be a day like every other. You'll be fine...",
+    "stress_add": -10,
+    "energie_add": 0,
+    "next": ""
+    },
+"Des7": {
+    "personne_parlant": "Mother",
+    "text": "Oh, ask your brother to give you some money for today. Please don't skip lunch!",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
+  },
+"Des8": {
+    "personne_parlant": "",
+    "text": "A convenient and regular trash can.",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
+  },
+"Des9": {
+    "personne_parlant": "Tom",
+    "text": "What the...?! What are you doing here???",
+    "stress_add": 10,
+    "energie_add": 0,
+    "next": ""
+  },
+"Des10": {
+    "personne_parlant": "Tom",
+    "text": "I already told Mum you were such a sneaky rat. She's waiting for you. Go now.",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
+  },
+"Des11": {
+    "personne_parlant": "Mother",
+    "text": "You make me... so sad...",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
+  },
+"Des12": {
+    "personne_parlant": "",
+    "text": "You're relieved this music garbage is over.",
+    "stress_add": -10,
+    "energie_add": 0,
+    "next": ""
+  },
+"Des13": {
+    "personne_parlant": "Mother",
+    "text": "I HATE YOU SO MUCH I HATE YOU SO MUCH I HATE YOU SO MUCH I HATE YOU SO MUCH",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": "Des13"
+  },
+"Des14": {
+    "personne_parlant": "Mother",
+    "text": "You just fed Doudou the cat and he's happy. This cuddling and playing time gives you strength.",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
+  },
 
 "CC1": {
     "personne_parlant": "Tom",
@@ -27,6 +125,57 @@
     "stress_add": 0,
     "energie_add": 0,
     "next": ""
+  },
+
+"Dial12": {
+    "personne_parlant": "",
+    "text": "Your phone. Hard to know if it causes or solves problems.",
+    "stress_add": 0,
+    "energie_add": 0,
+    "possible_reponses": [
+      {
+        "text": "Take the phone with you",
+        "next": ""
+      },
+      {
+        "text": "Leave it here",
+        "next": ""
+      }
+    ]
+  },
+  
+"Dial13": {
+    "personne_parlant": "",
+    "text": "Your favorite book. Imaginary worlds are much sweeter.",
+    "stress_add": 0,
+    "energie_add": 0,
+    "possible_reponses": [
+      {
+        "text": "Take the book with you",
+        "next": ""
+      },
+      {
+        "text": "Leave it her",
+        "next": ""
+      }
+    ]
+  },
+
+"Dial14": {
+    "personne_parlant": "",
+    "text": "Seems like pretty mature content... Should you read it?",
+    "stress_add": 0,
+    "energie_add": 0,
+    "possible_reponses": [
+      {
+        "text": "Yes!",
+        "next": ""
+      },
+      {
+        "text": "No...",
+        "next": ""
+      }
+    ]
   },
 
   "Dial1": {
@@ -51,13 +200,6 @@
   },
   
   
-  "Des7": {
-    "personne_parlant": "Mother",
-    "text": "Oh, ask your brother to give you some money for today. Please don't skip lunch!",
-    "stress_add": 0,
-    "energie_add": 0,
-    "next": ""
-  },
   "CC2": {
     "personne_parlant": "Mother",
     "text": "You're not awake yet, are you? Let's hear some music then.",
@@ -239,6 +381,260 @@
           "text": "I admit I should work on this, mum. You know I love you though.",
           "next": "BB5"
       }    
+      ]
+  },
+
+
+  "CC6": {
+    "personne_parlant": "Tom",
+    "text": "You're such a weirdo...",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
+  },
+  "AA6": {
+    "personne_parlant": "Tom",
+    "text": "Ah ah yes, don't do anything stupid with it...And you should think about a part-time job to be less dependent on others.",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
+  },
+  "BB6": {
+    "personne_parlant": "Tom",
+    "text": "F*ck, really?! I'll have a look.",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
+  },
+
+  "Dial6": {
+    "personne_parlant": "Tom",
+    "text": "Hmmm? What do you want?",
+    "stress_add": 0,
+    "energie_add": -1,
+    "possible_reponses": [
+      {
+        "text": "No answer",
+        "next": "CC6"
+      },
+      {
+        "text": "Mum told me you have some money for me...",
+        "next": "AA6"
+      },
+      {
+          "text": "I heard a strange noise outside... It might be the cat. Could you check please?",
+          "next": "BB6"
+      }    
+      ]
+  },
+
+
+   "CC7": {
+    "personne_parlant": "Tom",
+    "text": "Stop staring at me like this!!! Weirdo! Get out!!",
+    "stress_add": 10,
+    "energie_add": 0,
+    "next": ""
+  },
+  "AA7": {
+    "personne_parlant": "Tom",
+    "text": "Nice, now get out of here.",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
+  },
+  "BB7": {
+    "personne_parlant": "Tom",
+    "text": "Grrrr... get out!",
+    "stress_add": 0,
+    "energie_add": -1,
+    "next": ""
+  },
+
+  "Dial7": {
+    "personne_parlant": "Tom",
+    "text": "You're such a sneaky little brat!! Give this magazine back to me right now!!!",
+    "stress_add": 0,
+    "energie_add": 0,
+    "possible_reponses": [
+      {
+        "text": "No answer",
+        "next": "CC7"
+      },
+      {
+        "text": "Sorry... Yes, of course. Here.",
+        "next": "AA7"
+      },
+      {
+          "text": "If you want me not to tell mum, you really should stop this.",
+          "next": "BB7"
+      }    
+      ]
+  },
+
+
+   "CC8": {
+    "personne_parlant": "Mother",
+    "text": "I'm TIRED of your silence.",
+    "stress_add": 10,
+    "energie_add": 0,
+    "next": ""
+  },
+  "AA8": {
+    "personne_parlant": "Mother",
+    "text": "I wanna hear from you today. We should call each other during your lunch break! And be kind to people and avoid strangers.",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
+  },
+  "BB8": {
+    "personne_parlant": "Mother",
+    "text": "This is really stupid. You should really consider taking it with you.",
+    "stress_add": 10,
+    "energie_add": 0,
+    "next": ""
+  },
+
+  "Dial8": {
+    "personne_parlant": "Mother",
+    "text": "Oh, something else! Promise me you don't leave your phone here!",
+    "stress_add": 0,
+    "energie_add": 0,
+    "possible_reponses": [
+      {
+        "text": "No answer",
+        "next": "CC8"
+      },
+      {
+        "text": "Yes, I have it, don't worry...",
+        "next": "AA8"
+      },
+      {
+          "text": "I... really prefer to leave it here, mum...",
+          "next": "BB8"
+      }    
+      ]
+  },
+
+
+   "CC9": {
+    "personne_parlant": "Mother",
+    "text": "Look at me!!!! Answer me!!!!",
+    "stress_add": 10,
+    "energie_add": 0,
+    "next": "Dial11"
+  },
+  "AA9": {
+    "personne_parlant": "Mother",
+    "text": "Why should I stop??? This is my house!!!",
+    "stress_add": 10,
+    "energie_add": 0,
+    "next": "Dial10"
+  },
+  "BB9": {
+    "personne_parlant": "Mother",
+    "text": "Why should I stop??? This is my house!!!",
+    "stress_add": 0,
+    "energie_add": -1,
+    "next": "Dial10"
+  },
+
+  "Dial9": {
+    "personne_parlant": "Mother",
+    "text": "What are you still doing here???",
+    "stress_add": 0,
+    "energie_add": 0,
+    "possible_reponses": [
+      {
+        "text": "No answer",
+        "next": "CC9"
+      },
+      {
+        "text": "Please stop yelling, mum...",
+        "next": "AA9"
+      },
+      {
+          "text": "Just stop yelling now!!!",
+          "next": "BB9"
+      }    
+      ]
+  },
+
+
+  "CC10": {
+    "personne_parlant": "Mother",
+    "text": "AND YOU'RE STILL SILENT!!!! GOD YOU ARE SO DUMB!!!!!!",
+    "stress_add": 20,
+    "energie_add": 0,
+    "next": "Des13"
+  },
+  "AA10": {
+    "personne_parlant": "Mother",
+    "text": "OH I THINK IT, YOU LITTLE SH*T!!!!!",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": "Des13"
+  },
+  "BB10": {
+    "personne_parlant": "Mother",
+    "text": "AAAAAAAAHHHHH...",
+    "stress_add": 0,
+    "energie_add": -2,
+    "next": ""
+  },
+
+  "Dial10": {
+    "personne_parlant": "Mother",
+    "text": "YOU ARE AN UNGRATEFUL CHILD AND I REGRET HAVING SUCH A BURDEN IN MY LIFE!",
+    "stress_add": 0,
+    "energie_add": 0,
+    "possible_reponses": [
+      {
+        "text": "No answer",
+        "next": "CC10"
+      },
+      {
+        "text": "Please stop it... Tell me you don't think that...",
+        "next": "AA10"
+      },
+      {
+          "text": "Let's breathe. I'm cool. Everything's ok.",
+          "next": "BB10"
+      }    
+      ]
+  },
+
+
+  "CC11": {
+    "personne_parlant": "Mother",
+    "text": "YOUR. SILENCE. ANNOYS. MEEEEEEEEEEEEEEEEEE!!!!!!!!!!!",
+    "stress_add": 10,
+    "energie_add": 0,
+    "next": "Des13"
+  },
+  "AA11": {
+    "personne_parlant": "Mother",
+    "text": "AH AH AH AH AH DON'T PRETEND TO BE BRAVE!!!",
+    "stress_add": 0,
+    "energie_add": -1,
+    "next": "Des13"
+  },
+  
+  "Dial11": {
+    "personne_parlant": "Mother",
+    "text": "YOU CANNOT BE SOMETHING ELSE THAN A RAT!!! YOU SHOULD JUST STOP BEING!!!!",
+    "stress_add": 0,
+    "energie_add": 0,
+    "possible_reponses": [
+      {
+        "text": "No answer",
+        "next": "CC11"
+      },
+      {
+        "text": "You really think you impress me with such bullsh*t?",
+        "next": "AA11"
+      }
+       
       ]
   }
 }
