@@ -2,10 +2,15 @@ extends Control
 class_name Choices
 
 onready var buttons : Array = [
-	$HBoxContainer/GridContainer/Choice1,
-	$HBoxContainer/GridContainer/Choice2,
-	$HBoxContainer/GridContainer/Choice3,
-	$HBoxContainer/GridContainer/Choice4,
+	$VBox/HBox/GridContainer/Choice1,
+	$VBox/HBox/GridContainer/Choice2,
+	$VBox/HBox/GridContainer/Choice3,
+]
+
+onready var texts : Array = [
+	$VBox/HBox/GridContainer/Choice1/VBox/Text,
+	$VBox/HBox/GridContainer/Choice2/VBox/Text,
+	$VBox/HBox/GridContainer/Choice3/VBox/Text,
 ]
 
 signal choice_made
@@ -30,9 +35,6 @@ func _on_choice2():
 	
 func _on_choice3():
 	emit_signal("choice_made", 3)
-
-func _on_choice4():
-	emit_signal("choice_made", 4)
 	
 func set_description(id : String):
 	if id == "":
@@ -42,11 +44,12 @@ func set_description(id : String):
 	
 	var d : description = Interactions.lines[id]
 	GameState.le_dialogue = d
-	$HBoxContainer/Dialog/Text.text = d.text
+	$VBox/HBox/Dialog/VBox/Text.text = d.text
+	$VBox/Panel/Label.text = d.personne_parlant
 	var nrep = 0 if not d is Interactions.dialogue_type else \
 			   d.possible_reponses.size() - 1 
 	for i in range(nrep):
-		buttons[i].text = d.possible_reponses[i+1].text
+		texts[i].text = d.possible_reponses[i+1].text
 		buttons[i].set_visible(true)
-	for i in range(nrep, 4):
+	for i in range(nrep, 3):
 		buttons[i].set_visible(false)

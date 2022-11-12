@@ -11,82 +11,161 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-anchor_left = 0.2
+[node name="VBox" type="VBoxContainer" parent="."]
+anchor_left = 0.1
 anchor_top = 0.8
-anchor_right = 0.8
+anchor_right = 0.9
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Dialog" type="Panel" parent="HBoxContainer"]
-margin_right = 332.0
+[node name="Panel" type="PanelContainer" parent="VBox"]
+margin_right = 88.0
+margin_bottom = 28.0
+size_flags_horizontal = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="VBox/Panel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 81.0
+margin_bottom = 21.0
+grow_vertical = 0
+text = "Personnage"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="VBox"]
+margin_top = 32.0
+margin_right = 819.0
 margin_bottom = 120.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 1.2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Text" type="RichTextLabel" parent="HBoxContainer/Dialog"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = 5.0
-margin_right = -5.0
-margin_bottom = -5.0
+[node name="Dialog" type="Panel" parent="VBox/HBox"]
+margin_right = 362.0
+margin_bottom = 88.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.8
+
+[node name="VBox" type="VBoxContainer" parent="VBox/HBox/Dialog"]
+anchor_left = 0.02
+anchor_top = 0.02
+anchor_right = 0.98
+anchor_bottom = 0.98
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="RichTextLabel" parent="VBox/HBox/Dialog/VBox"]
+margin_top = 34.0
+margin_right = 347.0
+margin_bottom = 49.0
 text = "Question bien stressante."
+fit_content_height = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GridContainer" type="GridContainer" parent="HBoxContainer"]
-margin_left = 336.0
-margin_right = 614.0
-margin_bottom = 120.0
+[node name="GridContainer" type="HBoxContainer" parent="VBox/HBox"]
+margin_left = 366.0
+margin_right = 819.0
+margin_bottom = 88.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-columns = 2
+
+[node name="Choice1" type="Button" parent="VBox/HBox/GridContainer"]
+margin_right = 148.0
+margin_bottom = 88.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+
+[node name="VBox" type="VBoxContainer" parent="VBox/HBox/GridContainer/Choice1"]
+anchor_left = 0.02
+anchor_top = 0.02
+anchor_right = 0.98
+anchor_bottom = 0.98
+alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Choice1" type="Button" parent="HBoxContainer/GridContainer"]
-margin_right = 137.0
-margin_bottom = 58.0
+[node name="Text" type="RichTextLabel" parent="VBox/HBox/GridContainer/Choice1/VBox"]
+margin_top = 34.0
+margin_right = 142.0
+margin_bottom = 49.0
+mouse_filter = 2
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Choice2" type="Button" parent="VBox/HBox/GridContainer"]
+margin_left = 152.0
+margin_right = 300.0
+margin_bottom = 88.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Réponse zen"
 script = ExtResource( 2 )
 
-[node name="Choice2" type="Button" parent="HBoxContainer/GridContainer"]
-margin_left = 141.0
-margin_right = 278.0
-margin_bottom = 58.0
+[node name="VBox" type="VBoxContainer" parent="VBox/HBox/GridContainer/Choice2"]
+anchor_left = 0.02
+anchor_top = 0.02
+anchor_right = 0.98
+anchor_bottom = 0.98
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="RichTextLabel" parent="VBox/HBox/GridContainer/Choice2/VBox"]
+margin_top = 34.0
+margin_right = 142.0
+margin_bottom = 49.0
+mouse_filter = 2
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Choice3" type="Button" parent="VBox/HBox/GridContainer"]
+margin_left = 304.0
+margin_right = 453.0
+margin_bottom = 88.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Aggression verbale"
 script = ExtResource( 2 )
 
-[node name="Choice3" type="Button" parent="HBoxContainer/GridContainer"]
-margin_top = 62.0
-margin_right = 137.0
-margin_bottom = 120.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Angoisse totale"
-script = ExtResource( 2 )
+[node name="VBox" type="VBoxContainer" parent="VBox/HBox/GridContainer/Choice3"]
+anchor_left = 0.02
+anchor_top = 0.02
+anchor_right = 0.98
+anchor_bottom = 0.98
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Choice4" type="Button" parent="HBoxContainer/GridContainer"]
-margin_left = 141.0
-margin_top = 62.0
-margin_right = 278.0
-margin_bottom = 120.0
+[node name="Text" type="RichTextLabel" parent="VBox/HBox/GridContainer/Choice3/VBox"]
+margin_top = 19.0
+margin_right = 143.0
+margin_bottom = 64.0
+mouse_filter = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "La réponse D"
-script = ExtResource( 2 )
+text = "oqizhdoqihzdoqizhdoqizhdoqihzdoqizhdoqizh"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="choice_made" from="." to="." method="_on_choice"]
-[connection signal="pressed" from="HBoxContainer/GridContainer/Choice1" to="." method="_on_choice1"]
-[connection signal="pressed" from="HBoxContainer/GridContainer/Choice2" to="." method="_on_choice2"]
-[connection signal="pressed" from="HBoxContainer/GridContainer/Choice3" to="." method="_on_choice3"]
-[connection signal="pressed" from="HBoxContainer/GridContainer/Choice4" to="." method="_on_choice4"]
+[connection signal="pressed" from="VBox/HBox/GridContainer/Choice1" to="." method="_on_choice1"]
+[connection signal="pressed" from="VBox/HBox/GridContainer/Choice2" to="." method="_on_choice2"]
+[connection signal="pressed" from="VBox/HBox/GridContainer/Choice3" to="." method="_on_choice3"]
