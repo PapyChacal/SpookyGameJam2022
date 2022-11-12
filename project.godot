@@ -34,12 +34,31 @@ _global_script_class_icons={
 "description": "",
 "dialogue": "",
 "reponse": ""
+"base": "Node",
+"class": "FmodNative",
+"language": "NativeScript",
+"path": "res://addons/fmod/Fmod.gdns"
+}, {
+"base": "SoundButton",
+"class": "QuitButton",
+"language": "GDScript",
+"path": "res://scripts/QuitButton.gd"
+}, {
+"base": "Button",
+"class": "SoundButton",
+"language": "GDScript",
+"path": "res://scripts/Buttons/SoundButton.gd"
+} ]
+_global_script_class_icons={
+"FmodNative": "",
+"QuitButton": "",
+"SoundButton": ""
 }
 
 [application]
 
 config/name="SpookyGameJam2022"
-run/main_scene="res://scenes/Main.tscn"
+run/main_scene="res://scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
