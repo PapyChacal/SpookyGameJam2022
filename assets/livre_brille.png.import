@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SP_ch_2.png-8e0d55680b180fdb4a7cfa27e9f35f58.stex"
+path="res://.import/livre_brille.png-07553b726ec60228b82fde1e875cc40b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SP_ch_2.png"
-dest_files=[ "res://.import/SP_ch_2.png-8e0d55680b180fdb4a7cfa27e9f35f58.stex" ]
+source_file="res://assets/livre_brille.png"
+dest_files=[ "res://.import/livre_brille.png-07553b726ec60228b82fde1e875cc40b.stex" ]
 
 [params]
 
