@@ -22,17 +22,13 @@ onready var timer : Timer = $Timer
 signal choice_made
 
 func _ready():
-	print(Interactions.lines["Dial1"])
-	print(Interactions.lines["Dial1"] == null)
-	set_description("Dial1")
-	
-	
 	timer.connect("timeout", self, "_on_say_nothing")
 
 func _process(delta):
 	npr_gauge.value = timer.time_left / answer_time
 
 func _on_choice(choice : int):
+	timer.stop()
 	var d = GameState.le_dialogue
 	set_description(d.possible_reponses[choice].next)
 	var c = GameState.le_dialogue
