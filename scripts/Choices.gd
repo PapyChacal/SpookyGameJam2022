@@ -1,35 +1,55 @@
 extends Control
 class_name Choices
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-var le_dialogue : dialogue
+
+var le_dialogue : description
+onready var buttons : Array = [
+	$HBoxContainer/GridContainer/Choice1,
+	$HBoxContainer/GridContainer/Choice2,
+	$HBoxContainer/GridContainer/Choice3,
+	$HBoxContainer/GridContainer/Choice4,
+]
 
 signal choice_made
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	print(Interactions.lines["Description 1.1"])
+	print(Interactions.lines["Description 1.1"] == null)
+	set_description("Description 1.1")
+
+func _process(_delta):
+	if (not le_dialogue is Interactions.dialogue_type) \
+	   and le_dialogue != null \
+	   and Input.is_action_just_released("ui_select"):
+		set_description(le_dialogue.next)
+
+func _on_choice(choice : int):
+	set_description(le_dialogue.possible_reponses[choice].next)
 
 func _on_choice1():
-	emit_signal("choice_made", le_dialogue.possible_reponses[0])
+	emit_signal("choice_made", 0)
 	
 func _on_choice2():
-	emit_signal("choice_made", le_dialogue.possible_reponses[1])
+	emit_signal("choice_made", 1)
 	
 func _on_choice3():
-	emit_signal("choice_made", le_dialogue.possible_reponses[2])
+	emit_signal("choice_made", 2)
 
 func _on_choice4():
-	emit_signal("choice_made", le_dialogue.possible_reponses[3])
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-func _dialogue_to_screan(un_dialogue : dialogue):
-	get_node("HBoxContainer/Dialog/RichTextLabel").text = un_dialogue.text
-	get_node("HBoxContainer/GridContainer/Choice1").text = un_dialogue.possible_reponses[0]
-	get_node("HBoxContainer/GridContainer/Choice2").text = un_dialogue.possible_reponses[1]
-	get_node("HBoxContainer/GridContainer/Choice3").text = un_dialogue.possible_reponses[2]
-	get_node("HBoxContainer/GridContainer/Choice4").text = un_dialogue.possible_reponses[3]
-	le_dialogue = un_dialogue
-	return
+	emit_signal("choice_made", 3)
+	
+func set_description(id : String):
+	if id == "":
+		le_dialogue = null
+		self.set_visible(false)
+		return
+	
+	var d : description = Interactions.lines[id]
+	le_dialogue = d
+	$HBoxContainer/Dialog/Text.text = d.text
+	var nrep = 0 if not d is Interactions.dialogue_type else \
+			   d.possible_reponses.size() 
+	for i in range(nrep):
+		buttons[i].text = d.possible_reponses[i].text
+		buttons[i].set_visible(true)
+	for i in range(nrep, 4):
+		buttons[i].set_visible(false)

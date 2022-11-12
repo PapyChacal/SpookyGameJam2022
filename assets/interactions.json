@@ -1,0 +1,32 @@
+{
+  "Description 1.1": {
+    "personne_parlant": "Michel",
+    "text": "Eh Manu ! Tu descends ?",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": "Description 1.2"
+  },
+  "Description 1.2": {
+    "personne_parlant": "Manu",
+    "text": "Pour quoi faire ?",
+    "stress_add": 10,
+    "energie_add": 0,
+    "next": "Dialogue 1"
+  },
+  "Dialogue 1": {
+    "personne_parlant": "Michel",
+    "text": "Eh Manu ! Tu descends ?",
+    "stress_add": 0,
+    "energie_add": 0,
+    "possible_reponses": [
+      {
+        "text": "Pour quoi faire ?",
+        "next": "Description 1.1"
+      },
+      {
+        "text": "Ah je peux pas !",
+        "next": ""
+      }
+    ]
+  }
+}
