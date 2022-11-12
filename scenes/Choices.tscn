@@ -20,13 +20,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="PanelContainer" parent="VBox"]
-margin_right = 88.0
-margin_bottom = 28.0
-size_flags_horizontal = 2
-size_flags_vertical = 0
+[node name="HBoxTop" type="HBoxContainer" parent="VBox"]
+margin_right = 819.0
+margin_bottom = 38.0
 
-[node name="Label" type="Label" parent="VBox/Panel"]
+[node name="Panel" type="PanelContainer" parent="VBox/HBoxTop"]
+margin_top = 10.0
+margin_right = 88.0
+margin_bottom = 38.0
+size_flags_horizontal = 2
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="VBox/HBoxTop/Panel"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 81.0
@@ -37,8 +42,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="VSeparator" type="VSeparator" parent="VBox/HBoxTop"]
+visible = false
+margin_left = 773.0
+margin_right = 777.0
+margin_bottom = 28.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBox/HBoxTop"]
+margin_left = 734.0
+margin_right = 819.0
+margin_bottom = 38.0
+
+[node name="NPRGauge" type="ProgressBar" parent="VBox/HBoxTop/VBoxContainer"]
+margin_right = 85.0
+margin_bottom = 14.0
+
+[node name="NPRButton" type="Button" parent="VBox/HBoxTop/VBoxContainer"]
+margin_top = 18.0
+margin_right = 85.0
+margin_bottom = 38.0
+text = "Say nothing"
+
 [node name="HBox" type="HBoxContainer" parent="VBox"]
-margin_top = 32.0
+margin_top = 42.0
 margin_right = 819.0
 margin_bottom = 120.0
 size_flags_horizontal = 3
@@ -49,7 +75,7 @@ __meta__ = {
 
 [node name="Dialog" type="Panel" parent="VBox/HBox"]
 margin_right = 362.0
-margin_bottom = 88.0
+margin_bottom = 78.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.8
@@ -65,30 +91,30 @@ __meta__ = {
 }
 
 [node name="Text" type="RichTextLabel" parent="VBox/HBox/Dialog/VBox"]
-margin_top = 34.0
+margin_top = 29.0
 margin_right = 347.0
-margin_bottom = 49.0
+margin_bottom = 44.0
 text = "Question bien stressante."
 fit_content_height = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GridContainer" type="HBoxContainer" parent="VBox/HBox"]
+[node name="HBox" type="HBoxContainer" parent="VBox/HBox"]
 margin_left = 366.0
 margin_right = 819.0
-margin_bottom = 88.0
+margin_bottom = 78.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Choice1" type="Button" parent="VBox/HBox/GridContainer"]
+[node name="Choice1" type="Button" parent="VBox/HBox/HBox"]
 margin_right = 148.0
-margin_bottom = 88.0
+margin_bottom = 78.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 2 )
 
-[node name="VBox" type="VBoxContainer" parent="VBox/HBox/GridContainer/Choice1"]
+[node name="VBox" type="VBoxContainer" parent="VBox/HBox/HBox/Choice1"]
 anchor_left = 0.02
 anchor_top = 0.02
 anchor_right = 0.98
@@ -98,25 +124,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Text" type="RichTextLabel" parent="VBox/HBox/GridContainer/Choice1/VBox"]
-margin_top = 34.0
+[node name="Text" type="RichTextLabel" parent="VBox/HBox/HBox/Choice1/VBox"]
+margin_top = 29.0
 margin_right = 142.0
-margin_bottom = 49.0
+margin_bottom = 44.0
 mouse_filter = 2
 fit_content_height = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Choice2" type="Button" parent="VBox/HBox/GridContainer"]
+[node name="Choice2" type="Button" parent="VBox/HBox/HBox"]
 margin_left = 152.0
 margin_right = 300.0
-margin_bottom = 88.0
+margin_bottom = 78.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 2 )
 
-[node name="VBox" type="VBoxContainer" parent="VBox/HBox/GridContainer/Choice2"]
+[node name="VBox" type="VBoxContainer" parent="VBox/HBox/HBox/Choice2"]
 anchor_left = 0.02
 anchor_top = 0.02
 anchor_right = 0.98
@@ -126,25 +152,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Text" type="RichTextLabel" parent="VBox/HBox/GridContainer/Choice2/VBox"]
-margin_top = 34.0
+[node name="Text" type="RichTextLabel" parent="VBox/HBox/HBox/Choice2/VBox"]
+margin_top = 29.0
 margin_right = 142.0
-margin_bottom = 49.0
+margin_bottom = 44.0
 mouse_filter = 2
 fit_content_height = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Choice3" type="Button" parent="VBox/HBox/GridContainer"]
+[node name="Choice3" type="Button" parent="VBox/HBox/HBox"]
 margin_left = 304.0
 margin_right = 453.0
-margin_bottom = 88.0
+margin_bottom = 78.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 2 )
 
-[node name="VBox" type="VBoxContainer" parent="VBox/HBox/GridContainer/Choice3"]
+[node name="VBox" type="VBoxContainer" parent="VBox/HBox/HBox/Choice3"]
 anchor_left = 0.02
 anchor_top = 0.02
 anchor_right = 0.98
@@ -154,10 +180,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Text" type="RichTextLabel" parent="VBox/HBox/GridContainer/Choice3/VBox"]
-margin_top = 19.0
+[node name="Text" type="RichTextLabel" parent="VBox/HBox/HBox/Choice3/VBox"]
+margin_top = 14.0
 margin_right = 143.0
-margin_bottom = 64.0
+margin_bottom = 59.0
 mouse_filter = 2
 size_flags_horizontal = 3
 text = "oqizhdoqihzdoqizhdoqizhdoqihzdoqizhdoqizh"
@@ -166,6 +192,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="choice_made" from="." to="." method="_on_choice"]
-[connection signal="pressed" from="VBox/HBox/GridContainer/Choice1" to="." method="_on_choice1"]
-[connection signal="pressed" from="VBox/HBox/GridContainer/Choice2" to="." method="_on_choice2"]
-[connection signal="pressed" from="VBox/HBox/GridContainer/Choice3" to="." method="_on_choice3"]
+[connection signal="pressed" from="VBox/HBoxTop/VBoxContainer/NPRButton" to="." method="_on_say_nothing"]
+[connection signal="pressed" from="VBox/HBox/HBox/Choice1" to="." method="_on_choice1"]
+[connection signal="pressed" from="VBox/HBox/HBox/Choice2" to="." method="_on_choice2"]
+[connection signal="pressed" from="VBox/HBox/HBox/Choice3" to="." method="_on_choice3"]
