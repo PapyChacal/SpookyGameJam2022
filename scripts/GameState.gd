@@ -2,6 +2,7 @@ extends Node
 
 var energy : int = 3
 var stress : float = 50.0
+var le_dialogue : description
 
 #Dumb update of stress for now
 func _process(delta):

@@ -1,18 +1,14 @@
 extends Node2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var choices = $Choices
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+func _process(_delta):
+	var d = GameState.le_dialogue
+	if d != null \
+	   and d.get('possible_reponses') == null \
+	   and Input.is_action_just_released("ui_select"):
+		Fmod.play_one_shot("event:/UI/Validate", self)
+		choices.set_description(d.next)
 
 func _on_choice_made(choice : reponse):
 	print("Chosen ", choice)
