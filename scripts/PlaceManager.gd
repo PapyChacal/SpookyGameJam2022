@@ -9,12 +9,14 @@ var places : Dictionary = {
 	'Room' : place.new()
 }
 
+signal set_description
+
 func interact(name : String):
 	# Démarrer interaction avec l'objet 'name'
 	print('Interact with ', name)
 	# Le nom de l'action à déclencher
-	#var action = places[GameState.location].elements[name]
-	#get_parent().get_child(0).set_description(action)
+	var action = places[GameState.location][name]
+	emit_signal("set_description", action)
 
 func _ready():
 	GameState.place_manager = self

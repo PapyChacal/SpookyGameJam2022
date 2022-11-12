@@ -134,6 +134,10 @@
     "energie_add": 0,
     "possible_reponses": [
       {
+        "text": "No answer",
+        "next": ""
+      },
+      {
         "text": "Take the phone with you",
         "next": ""
       },
@@ -151,6 +155,10 @@
     "energie_add": 0,
     "possible_reponses": [
       {
+        "text": "No answer",
+        "next": ""
+      },
+      {
         "text": "Take the book with you",
         "next": ""
       },
@@ -167,6 +175,10 @@
     "stress_add": 0,
     "energie_add": 0,
     "possible_reponses": [
+      {
+        "text": "No answer",
+        "next": ""
+      },
       {
         "text": "Yes!",
         "next": ""

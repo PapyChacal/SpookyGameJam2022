@@ -1,4 +1,4 @@
-extends Sprite
+extends elementSprite
 
 var is_clicked : bool = false
 
