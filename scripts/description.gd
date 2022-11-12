@@ -12,3 +12,4 @@ func _init(p : String, t : String, e : int, s : int, n : String):
 	energie_add = e
 	stress_add = s
 	next = n
+

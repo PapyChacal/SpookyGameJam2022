@@ -22,9 +22,10 @@ onready var timer : Timer = $Timer
 signal choice_made
 
 func _ready():
+	set_description("")
 	timer.connect("timeout", self, "_on_say_nothing")
 
-func _process(delta):
+func _process(_delta):
 	npr_gauge.value = timer.time_left / answer_time
 
 func _on_choice(choice : int):

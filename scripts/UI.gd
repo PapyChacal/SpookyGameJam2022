@@ -32,6 +32,6 @@ func update_energy(n : int):
 func update_stress(s : float):
 	gauge.value = s
 
-func _process(delta):
+func _process(_delta):
 	update_stress(GameState.stress)
 	update_energy(GameState.energy)

@@ -2,9 +2,6 @@ extends Node2D
 
 onready var choices = $Choices
 
-func _ready():
-	choices.set_description("Dial3")
-
 func _process(_delta):
 	var d = GameState.le_dialogue
 	if d != null \
