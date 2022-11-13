@@ -1,6 +1,5 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://scripts/Interaction Objets/ShinyHoverSprite.gd" type="Script" id=1]
 [ext_resource path="res://scripts/Interaction Objets/ShinyToggleSprite.gd" type="Script" id=2]
 [ext_resource path="res://assets/Room/porte.png" type="Texture" id=3]
 [ext_resource path="res://assets/Room/smartphone_brille2.png" type="Texture" id=4]
@@ -10,8 +9,6 @@
 [ext_resource path="res://assets/livre_brille.png" type="Texture" id=8]
 [ext_resource path="res://assets/Room/smartphone.png" type="Texture" id=9]
 [ext_resource path="res://assets/Room/chambre.png" type="Texture" id=10]
-[ext_resource path="res://scripts/elementSprite.gd" type="Script" id=11]
-[ext_resource path="res://scripts/Interaction Objets/door.gd" type="Script" id=12]
 [ext_resource path="res://scripts/Locality/Room.gd" type="Script" id=13]
 [ext_resource path="res://scenes/ElementSprite.tscn" type="PackedScene" id=14]
 
@@ -46,11 +43,18 @@ position = Vector2( 6.0105, 2.53407 )
 scale = Vector2( 1.87712, 2.09978 )
 texture = ExtResource( 4 )
 
-[node name="door" type="Sprite" parent="."]
-position = Vector2( 849.253, 358.801 )
+[node name="door" parent="." instance=ExtResource( 14 )]
+position = Vector2( 854.672, 355.718 )
+
+[node name="Sprite" type="Sprite" parent="door"]
+visible = false
 scale = Vector2( 0.533327, 0.555562 )
 texture = ExtResource( 3 )
-script = ExtResource( 12 )
+
+[node name="shiny1" type="Sprite" parent="door"]
+visible = false
+scale = Vector2( 0.533327, 0.555562 )
+texture = ExtResource( 3 )
 
 [node name="computer" type="Sprite" parent="."]
 visible = false
@@ -59,15 +63,15 @@ scale = Vector2( 0.402431, 0.421189 )
 texture = ExtResource( 6 )
 script = ExtResource( 2 )
 
-[node name="book" type="Sprite" parent="."]
-position = Vector2( 490.675, 301.007 )
+[node name="book" parent="." instance=ExtResource( 14 )]
+position = Vector2( 535.225, 297.743 )
+
+[node name="Sprite" type="Sprite" parent="book"]
 scale = Vector2( 0.35794, 0.516887 )
 texture = ExtResource( 5 )
-script = ExtResource( 11 )
 
-[node name="book_shiny" type="Sprite" parent="book"]
+[node name="shiny1" type="Sprite" parent="book"]
 visible = false
-position = Vector2( 46.6372, 9.99023 )
+position = Vector2( 0.75293, 1.71758 )
+scale = Vector2( 0.35794, 0.516887 )
 texture = ExtResource( 8 )
-offset = Vector2( -45, -8 )
-script = ExtResource( 1 )
