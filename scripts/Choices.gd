@@ -86,6 +86,7 @@ func set_description(id : String):
 		Fmod.play_one_shot("event:/UI/Energy_Use", self)
 	GameState.energy += d.energie_add
 	GameState.stress += d.stress_add
+	GameState.energy = min(GameState.energy, 3)
 	
 	GameState.le_dialogue = d
 	$VBox/HBox/Dialog/VBox/Text.text = d.text
