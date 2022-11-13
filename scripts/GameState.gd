@@ -24,7 +24,7 @@ func trigger_action(action : String):
 
 func reponse_cost_energy(r : reponse):
 	var action = r.next
-	if is_goto(action):
+	if is_goto(action) or action == "":
 		return 0
 	return Interactions.lines[action].energie_add
 

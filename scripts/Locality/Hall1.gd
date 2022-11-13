@@ -2,7 +2,8 @@ extends Node2D
 
 
 func _ready():
-	GameState.place_manager.places[name] = {
+	var place = GameState.place_manager.places[name]
+	place.elements = {
 		'brother' : ''
 	}
-	pass
+	place.inter = 'Dial1'

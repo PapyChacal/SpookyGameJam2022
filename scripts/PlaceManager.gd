@@ -17,7 +17,7 @@ func interact(name : String):
 	# Démarrer interaction avec l'objet 'name'
 	print('PM: Interact with ', name)
 	# Le nom de l'action à déclencher
-	var action = places[GameState.location][name]
+	var action = places[GameState.location].elements[name]
 	print('action: ', action)
 	emit_signal("trigger_action", action)
 
@@ -31,3 +31,5 @@ func go_to(place : String):
 		remove_child(c)
 		c.queue_free()
 	add_child(scenes[place].instance())
+	var interpelation = GameState.place_manager.places[place].inter
+	GameState.trigger_action(interpelation)
