@@ -11,6 +11,7 @@ onready var texts : Array = [
 	$VBox/HBox/HBox/Choice2/VBox/Text,
 	$VBox/HBox/HBox/Choice3/VBox/Text,
 ]
+
 onready var npr_gauge = $VBox/HBoxTop/VBoxContainer/NPRGauge
 onready var npr_button = $VBox/HBoxTop/VBoxContainer/NPRButton
 
@@ -99,9 +100,9 @@ func set_description(id : String):
 	is_question = nrep != 0
 	print(str(nrep))
 	for i in range(nrep):
-		texts[i].text = d.possible_reponses[i+1].text
-		texts[i].percent_visible = 0.0
+		buttons[i].set_reponse(d.possible_reponses[i+1])
 		buttons[i].set_visible(true)
+		
 	for i in range(nrep, 3):
 		buttons[i].set_visible(false)
 	

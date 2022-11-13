@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/Choices.gd" type="Script" id=1]
-[ext_resource path="res://scripts/Buttons/ValidateButton.gd" type="Script" id=2]
+[ext_resource path="res://scenes/UI/ChoiceButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/Buttons/BackButton.gd" type="Script" id=3]
 
 [node name="Choices" type="Control"]
@@ -120,96 +120,14 @@ margin_bottom = 78.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Choice1" type="Button" parent="VBox/HBox/HBox"]
-margin_right = 148.0
-margin_bottom = 78.0
-mouse_filter = 1
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource( 2 )
+[node name="Choice1" parent="VBox/HBox/HBox" instance=ExtResource( 2 )]
 
-[node name="VBox" type="VBoxContainer" parent="VBox/HBox/HBox/Choice1"]
-anchor_left = 0.02
-anchor_top = 0.02
-anchor_right = 0.98
-anchor_bottom = 0.98
-alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Text" type="Label" parent="VBox/HBox/HBox/Choice1/VBox"]
-margin_right = 142.0
-margin_bottom = 74.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-size_flags_horizontal = 3
-size_flags_vertical = 3
-align = 1
-valign = 1
-autowrap = true
-
-[node name="Choice2" type="Button" parent="VBox/HBox/HBox"]
+[node name="Choice2" parent="VBox/HBox/HBox" instance=ExtResource( 2 )]
 margin_left = 152.0
 margin_right = 300.0
-margin_bottom = 78.0
-mouse_filter = 1
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource( 2 )
 
-[node name="VBox" type="VBoxContainer" parent="VBox/HBox/HBox/Choice2"]
-anchor_left = 0.02
-anchor_top = 0.02
-anchor_right = 0.98
-anchor_bottom = 0.98
-alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Text" type="Label" parent="VBox/HBox/HBox/Choice2/VBox"]
-margin_right = 142.0
-margin_bottom = 74.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-size_flags_horizontal = 3
-size_flags_vertical = 3
-align = 1
-valign = 1
-autowrap = true
-
-[node name="Choice3" type="Button" parent="VBox/HBox/HBox"]
+[node name="Choice3" parent="VBox/HBox/HBox" instance=ExtResource( 2 )]
 margin_left = 304.0
 margin_right = 453.0
-margin_bottom = 78.0
-mouse_filter = 1
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource( 2 )
-
-[node name="VBox" type="VBoxContainer" parent="VBox/HBox/HBox/Choice3"]
-anchor_left = 0.02
-anchor_top = 0.02
-anchor_right = 0.98
-anchor_bottom = 0.98
-alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Text" type="Label" parent="VBox/HBox/HBox/Choice3/VBox"]
-margin_right = 143.0
-margin_bottom = 74.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-size_flags_horizontal = 3
-size_flags_vertical = 3
-align = 1
-valign = 1
-autowrap = true
 
 [node name="Timer" type="Timer" parent="."]
