@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Inventory.gd" type="Script" id=1]
+
+[node name="Inventory" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Zone" type="Control" parent="."]
+visible = false
+anchor_left = 0.85
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BG" type="Panel" parent="Zone"]
+anchor_right = 1.01
+anchor_bottom = 1.0
+
+[node name="Container" type="VBoxContainer" parent="Zone/BG"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 146.6
+margin_bottom = 593.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TriggerZone" type="Control" parent="."]
+anchor_left = 0.97
+anchor_right = 1.0
+anchor_bottom = 1.0
+[connection signal="mouse_exited" from="Zone/BG/Container" to="." method="_on_untrigger"]
+[connection signal="mouse_entered" from="TriggerZone" to="." method="_on_trigger"]
