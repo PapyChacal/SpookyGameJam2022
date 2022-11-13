@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "SoundButton",
+"class": "BackButton",
+"language": "GDScript",
+"path": "res://scripts/Buttons/BackButton.gd"
+}, {
 "base": "Control",
 "class": "Choices",
 "language": "GDScript",
@@ -24,7 +29,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/PlaceManager.gd"
 }, {
-"base": "SoundButton",
+"base": "Button",
 "class": "PlayButton",
 "language": "GDScript",
 "path": "res://scripts/Buttons/PlayButton.gd"
@@ -34,7 +39,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Buttons/QuitButton.gd"
 }, {
-"base": "elementSprite",
+"base": "Sprite",
 "class": "ShinyHoverSprite",
 "language": "GDScript",
 "path": "res://scripts/Interaction Objets/ShinyHoverSprite.gd"
@@ -54,6 +59,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/UI.gd"
 }, {
+"base": "SoundButton",
+"class": "ValidateButton",
+"language": "GDScript",
+"path": "res://scripts/Buttons/ValidateButton.gd"
+}, {
 "base": "Reference",
 "class": "description",
 "language": "GDScript",
@@ -67,17 +77,17 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "element",
 "language": "GDScript",
-"path": "res://element.gd"
+"path": "res://scripts/element.gd"
 }, {
 "base": "Sprite",
 "class": "elementSprite",
 "language": "GDScript",
-"path": "res://elementSprite.gd"
+"path": "res://scripts/elementSprite.gd"
 }, {
 "base": "Node",
 "class": "place",
 "language": "GDScript",
-"path": "res://place.gd"
+"path": "res://scripts/place.gd"
 }, {
 "base": "Reference",
 "class": "reponse",
@@ -85,6 +95,7 @@ _global_script_classes=[ {
 "path": "res://scripts/reponse.gd"
 } ]
 _global_script_class_icons={
+"BackButton": "",
 "Choices": "",
 "FmodNative": "",
 "PlaceManager": "",
@@ -94,6 +105,7 @@ _global_script_class_icons={
 "ShinyToggleSprite": "",
 "SoundButton": "",
 "UI": "",
+"ValidateButton": "",
 "description": "",
 "dialogue": "",
 "element": "",

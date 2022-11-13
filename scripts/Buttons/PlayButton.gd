@@ -1,4 +1,4 @@
-extends SoundButton
+extends Button
 class_name PlayButton
 
 func _ready():
@@ -8,3 +8,4 @@ func _ready():
 func play():
 # warning-ignore:return_value_discarded
 	get_tree().change_scene('res://scenes/Main.tscn')
+	Fmod.play_one_shot("event:/Environment/Ambiance", self)

@@ -8,7 +8,6 @@ var lines : Dictionary
 
 func _ready():
 	lines = load_interactions(interactions_file)
-	Fmod.play_one_shot("event:/Environment/Ambiance", self)
 
 func load_interactions(path : String):
 	var f : File = File.new()

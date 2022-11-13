@@ -12,6 +12,7 @@ onready var texts : Array = [
 	$VBox/HBox/HBox/Choice3/VBox/Text,
 ]
 onready var npr_gauge = $VBox/HBoxTop/VBoxContainer/NPRGauge
+onready var npr_button = $VBox/HBoxTop/VBoxContainer/NPRButton
 
 export(float) var answer_time = 7.0
 
@@ -27,7 +28,7 @@ var cur_rep = 0
 func _ready():
 	set_description("Dial1")
 # warning-ignore:return_value_discarded
-	timer.connect("timeout", self, "_on_say_nothing")
+	timer.connect("timeout", npr_button, "emit_signal", ["pressed"])
 
 func _process(_delta):
 	if $VBox/HBoxTop/Panel/Label.percent_visible < 1.0:
@@ -53,9 +54,6 @@ func _on_choice(choice : int):
 			set_description(d.possible_reponses[choice].next)
 	
 	var c = GameState.le_dialogue
-	if c != null:
-		GameState.energy += c.energie_add
-		GameState.stress += c.stress_add
 
 func _on_say_nothing():
 	emit_signal("choice_made", 0)
@@ -79,6 +77,14 @@ func set_description(id : String):
 	self.set_visible(true)
 	
 	var d : description = Interactions.lines[id]
+		
+	if d.energie_add > 0:
+		Fmod.play_one_shot("event:/UI/Energy_Fill", self)
+	elif d.energie_add < 0:
+		Fmod.play_one_shot("event:/UI/Energy_Use", self)
+	GameState.energy += d.energie_add
+	GameState.stress += d.stress_add
+	
 	GameState.le_dialogue = d
 	$VBox/HBox/Dialog/VBox/Text.text = d.text
 	$VBox/HBox/Dialog/VBox/Text.percent_visible = 0.0

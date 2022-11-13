@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/Choices.gd" type="Script" id=1]
-[ext_resource path="res://scripts/Buttons/SoundButton.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Buttons/ValidateButton.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Buttons/BackButton.gd" type="Script" id=3]
 
 [node name="Choices" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -0.735107
 margin_right = -0.735107
+mouse_filter = 1
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -30,6 +32,7 @@ margin_bottom = 38.0
 margin_top = 10.0
 margin_right = 88.0
 margin_bottom = 38.0
+mouse_filter = 1
 size_flags_horizontal = 2
 size_flags_vertical = 8
 
@@ -39,6 +42,7 @@ margin_top = 7.0
 margin_right = 81.0
 margin_bottom = 21.0
 grow_vertical = 0
+mouse_filter = 1
 text = "Personnage"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -49,6 +53,7 @@ visible = false
 margin_left = 726.0
 margin_right = 730.0
 margin_bottom = 38.0
+mouse_filter = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBox/HBoxTop"]
 margin_left = 734.0
@@ -58,6 +63,7 @@ margin_bottom = 38.0
 [node name="NPRGauge" type="ProgressBar" parent="VBox/HBoxTop/VBoxContainer"]
 margin_right = 85.0
 margin_bottom = 14.0
+mouse_filter = 1
 max_value = 1.0
 step = 0.0
 
@@ -65,7 +71,9 @@ step = 0.0
 margin_top = 18.0
 margin_right = 85.0
 margin_bottom = 38.0
+mouse_filter = 1
 text = "Say nothing"
+script = ExtResource( 3 )
 
 [node name="HBox" type="HBoxContainer" parent="VBox"]
 margin_top = 42.0
@@ -80,6 +88,7 @@ __meta__ = {
 [node name="Dialog" type="Panel" parent="VBox/HBox"]
 margin_right = 362.0
 margin_bottom = 78.0
+mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.8
@@ -99,6 +108,7 @@ margin_right = 347.0
 margin_bottom = 74.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
 align = 1
@@ -115,6 +125,7 @@ size_flags_vertical = 3
 [node name="Choice1" type="Button" parent="VBox/HBox/HBox"]
 margin_right = 148.0
 margin_bottom = 78.0
+mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 2 )
@@ -134,6 +145,7 @@ margin_right = 142.0
 margin_bottom = 74.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
 align = 1
@@ -144,6 +156,7 @@ autowrap = true
 margin_left = 152.0
 margin_right = 300.0
 margin_bottom = 78.0
+mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 2 )
@@ -163,6 +176,7 @@ margin_right = 142.0
 margin_bottom = 74.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
 align = 1
@@ -173,6 +187,7 @@ autowrap = true
 margin_left = 304.0
 margin_right = 453.0
 margin_bottom = 78.0
+mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 2 )
@@ -192,6 +207,7 @@ margin_right = 143.0
 margin_bottom = 74.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
 align = 1
