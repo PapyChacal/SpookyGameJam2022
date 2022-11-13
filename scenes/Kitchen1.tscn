@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/Locality/Kitchen1.gd" type="Script" id=1]
+[ext_resource path="res://assets/Kitchen/SP_cuis_ normal_1.png" type="Texture" id=2]
+[ext_resource path="res://assets/Kitchen/SP_cuis_ normal_1_fog.png" type="Texture" id=3]
+[ext_resource path="res://assets/People/mother.png" type="Texture" id=4]
+
+[node name="Kitchen1" type="Control"]
+margin_left = -1.71478
+margin_right = -1.71478
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SP_cuis_ normal_1" type="Sprite" parent="."]
+scale = Vector2( 0.533, 0.555572 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="mother" type="Sprite" parent="."]
+position = Vector2( 249.834, 386.781 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 4 )
+
+[node name="SP_cuis_ normal_1_fog" type="Sprite" parent="."]
+position = Vector2( -3.70129, 0 )
+scale = Vector2( 0.533, 0.555572 )
+texture = ExtResource( 3 )
+centered = false
