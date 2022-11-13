@@ -26,7 +26,7 @@ var nrep = 0
 var cur_rep = 0
 
 func _ready():
-	set_description("Dial1")
+	set_description("")
 # warning-ignore:return_value_discarded
 	timer.connect("timeout", npr_button, "emit_signal", ["pressed"])
 

@@ -1,0 +1,5 @@
+[gd_resource type="StreamTexture" format=2]
+
+[resource]
+flags = 4
+load_path = "res://.import/flamme.png-2bd83da142d77aa2ce58ae41479ef2bd.stex"
