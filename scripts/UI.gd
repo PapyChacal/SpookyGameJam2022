@@ -1,7 +1,7 @@
 extends Control
 class_name UI
 
-export(ImageTexture) var energy_icon = ImageTexture.new()
+export(ImageTexture) var energy_icon = preload('res://assets/energy.png')
 
 onready var energy = $UIContainer/EnergyContainer
 onready var gauge = $UIContainer/StressGauge
@@ -11,7 +11,6 @@ var icon : TextureRect = TextureRect.new()
 func _ready():
 	update_stress(50)
 	update_energy(3)
-	energy_icon.load('res://assets/energy.png')
 	icon.expand = true
 	icon.rect_min_size = Vector2(48, 48)
 	icon.texture = energy_icon

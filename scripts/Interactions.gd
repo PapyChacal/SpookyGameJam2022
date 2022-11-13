@@ -12,6 +12,7 @@ func _ready():
 
 func load_interactions(path : String):
 	var f : File = File.new()
+# warning-ignore:return_value_discarded
 	f.open(path, File.READ)
 	
 	var dict_save = JSON.parse(f.get_as_text()).result
@@ -47,6 +48,7 @@ func load_interactions(path : String):
 
 func save_interactions(dict : Dictionary, path : String):
 	var f : File = File.new()
+# warning-ignore:return_value_discarded
 	f.open(path, File.WRITE)
 	
 	var dict_save = {}

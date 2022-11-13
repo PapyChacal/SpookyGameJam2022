@@ -26,6 +26,7 @@ var cur_rep = 0
 
 func _ready():
 	set_description("Dial1")
+# warning-ignore:return_value_discarded
 	timer.connect("timeout", self, "_on_say_nothing")
 
 func _process(_delta):

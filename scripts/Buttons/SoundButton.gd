@@ -5,6 +5,7 @@ extends Button
 # For factorization
 
 func _ready():
+# warning-ignore:return_value_discarded
 	connect("pressed", self, "validation_bleep")
 
 func validation_bleep():
