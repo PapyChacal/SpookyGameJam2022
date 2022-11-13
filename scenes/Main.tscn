@@ -21,3 +21,4 @@ mouse_filter = 1
 
 [node name="UI" parent="." instance=ExtResource( 3 )]
 mouse_filter = 2
+[connection signal="set_description" from="PlaceManager" to="Choices" method="set_description"]

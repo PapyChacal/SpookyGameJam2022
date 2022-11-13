@@ -13,9 +13,10 @@ signal set_description
 
 func interact(name : String):
 	# Démarrer interaction avec l'objet 'name'
-	print('Interact with ', name)
+	print('PM: Interact with ', name)
 	# Le nom de l'action à déclencher
 	var action = places[GameState.location][name]
+	print('action: ', action)
 	emit_signal("set_description", action)
 
 func _ready():
