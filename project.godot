@@ -29,7 +29,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/ElementSpriteNew.gd"
 }, {
-"base": "Node",
+"base": "",
 "class": "FmodNative",
 "language": "NativeScript",
 "path": "res://addons/fmod/Fmod.gdns"
@@ -39,7 +39,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/PlaceManager.gd"
 }, {
-"base": "Button",
+"base": "SoundButton",
 "class": "PlayButton",
 "language": "GDScript",
 "path": "res://scripts/Buttons/PlayButton.gd"
@@ -54,7 +54,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Interaction Objets/ShinyHoverSprite.gd"
 }, {
-"base": "elementSprite",
+"base": "Sprite",
 "class": "ShinyToggleSprite",
 "language": "GDScript",
 "path": "res://scripts/Interaction Objets/ShinyToggleSprite.gd"
@@ -136,6 +136,7 @@ _global_script_class_icons={
 
 config/name="SpookyGameJam2022"
 run/main_scene="res://scenes/MainMenu.tscn"
+config/icon="res://assets/energy.png"
 
 [autoload]
 

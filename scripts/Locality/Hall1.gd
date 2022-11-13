@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 
 func _ready():
@@ -8,6 +8,6 @@ func _ready():
 		'staircase'    : 'goto:Room',
 		'toilet'       : 'Des5',
 		'plant'        : 'Des4',
-		'door_kitchen' : ''
+		'door_kitchen' : 'goto:Kitchen1'
 	}
 	place.inter = 'Dial1'

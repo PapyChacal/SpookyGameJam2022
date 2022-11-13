@@ -2,13 +2,15 @@ extends Control
 class_name PlaceManager
 
 var scenes : Dictionary = {
-	'Room' : preload("res://scenes/Room.tscn"),
-	'Hall1': preload("res://scenes/Hall1.tscn")
+	'Room'     : preload("res://scenes/Room.tscn"),
+	'Hall1'    : preload("res://scenes/Hall1.tscn"),
+	'Kitchen1' : preload("res://scenes/Kitchen1.tscn")
 }
 
 var places : Dictionary = {
 	'Room' : place.new(),
-	'Hall1': place.new()
+	'Hall1': place.new(),
+	'Kitchen1': place.new()
 }
 
 signal trigger_action

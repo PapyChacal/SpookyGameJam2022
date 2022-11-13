@@ -15,8 +15,11 @@
 [ext_resource path="res://assets/Hall_staircase/porte_cuisine.png" type="Texture" id=13]
 [ext_resource path="res://assets/Hall_staircase/porte_cuisine_shiny.png" type="Texture" id=14]
 
-[node name="Hall1" type="Node2D"]
+[node name="Hall1" type="Control"]
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="hall_background" type="Sprite" parent="."]
 scale = Vector2( 0.533, 0.555531 )
@@ -25,7 +28,7 @@ centered = false
 
 [node name="brother" type="Sprite" parent="."]
 position = Vector2( 205.16, 398.322 )
-scale = Vector2( 0.37, 0.37 )
+scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 4 )
 script = ExtResource( 1 )
 
