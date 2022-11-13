@@ -1,11 +1,20 @@
 {
-"Des0": {
+"Des00": {
+    "personne_parlant": "",
+    "text": "OK... Time to go.\n(Press space to continue)",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
+  },  
+  
+  "Des0": {
     "personne_parlant": "",
     "text": "Doesn't sound like a good idea...",
     "stress_add": 0,
     "energie_add": 0,
     "next": ""
-  },  
+  },
+  
 "Des3": {
     "personne_parlant": "",
     "text": "Posters and drawings of badass elves and androids. Inspiring.",
@@ -105,28 +114,6 @@
     "next": ""
   },
 
-"CC1": {
-    "personne_parlant": "Tom",
-    "text": "Pfff... If you keep ignoring people, you won't make any friends, you know",
-    "stress_add": 10,
-    "energie_add": 0,
-    "next": ""
-  },
-  "AA1": {
-    "personne_parlant": "Tom",
-    "text": "Wow... Feels weird when you're confident like that.",
-    "stress_add": 0,
-    "energie_add": -1,
-    "next": ""
-  },
-  "BB1": {
-    "personne_parlant": "Tom",
-    "text": "You little...!!!",
-    "stress_add": 0,
-    "energie_add": 0,
-    "next": ""
-  },
-
 "Dial12": {
     "personne_parlant": "",
     "text": "Your phone. Hard to know if it causes or solves problems.",
@@ -163,7 +150,7 @@
         "next": ""
       },
       {
-        "text": "Leave it her",
+        "text": "Leave it here",
         "next": ""
       }
     ]
@@ -188,6 +175,29 @@
         "next": ""
       }
     ]
+  },
+
+
+"CC1": {
+    "personne_parlant": "Tom",
+    "text": "Pfff... If you keep ignoring people, you won't make any friends, you know",
+    "stress_add": 10,
+    "energie_add": 0,
+    "next": ""
+  },
+  "AA1": {
+    "personne_parlant": "Tom",
+    "text": "Wow... Feels weird when you're confident like that.",
+    "stress_add": 0,
+    "energie_add": -1,
+    "next": ""
+  },
+  "BB1": {
+    "personne_parlant": "Tom",
+    "text": "You little...!!!",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
   },
 
   "Dial1": {

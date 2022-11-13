@@ -8,3 +8,4 @@ func init_room():
 		'smartphone' : 'Dial12',
 		'book'       : 'Dial13'
 	}
+	place.inter = 'Des00'
