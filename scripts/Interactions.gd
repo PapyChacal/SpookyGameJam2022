@@ -1,6 +1,7 @@
 extends Node
 
 const interactions_file = 'res://assets/interactions.json'
+
 const dialogue_type = preload("res://scripts/dialogue.gd")
 const description_type = preload("res://scripts/description.gd")
 
@@ -68,7 +69,7 @@ func save_interactions(dict : Dictionary, path : String):
 				"possible_reponses": reponses,
 			}
 		
-		elif dict[id] is description_type:
+		elif dict[id] is GameState.description_type:
 			dict_save[id] = {
 				"personne_parlant" : dict[id].personne_parlant,
 				"text" : dict[id].text,

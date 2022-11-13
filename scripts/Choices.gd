@@ -26,9 +26,12 @@ var nrep = 0
 var cur_rep = 0
 
 func _ready():
-	set_description("")
+	GameState.choices = self
 # warning-ignore:return_value_discarded
 	timer.connect("timeout", npr_button, "emit_signal", ["pressed"])
+	npr_button.connect("pressed", self, "_on_choice", [0])
+	for i in range(buttons.size()):
+		buttons[i].connect("pressed", self, "_on_choice", [i+1])
 
 func _process(_delta):
 	if $VBox/HBoxTop/Panel/Label.percent_visible < 1.0:
@@ -51,7 +54,7 @@ func _on_choice(choice : int):
 	var d = GameState.le_dialogue
 	if d != null :
 		if d is Interactions.dialogue_type:
-			set_description(d.possible_reponses[choice].next)
+			GameState.trigger_action(d.possible_reponses[choice].next)
 
 func _on_say_nothing():
 	emit_signal("choice_made", 0)

@@ -9,7 +9,7 @@ var places : Dictionary = {
 	'Room' : place.new()
 }
 
-signal set_description
+signal trigger_action
 
 func interact(name : String):
 	# Démarrer interaction avec l'objet 'name'
@@ -17,11 +17,11 @@ func interact(name : String):
 	# Le nom de l'action à déclencher
 	var action = places[GameState.location][name]
 	print('action: ', action)
-	emit_signal("set_description", action)
+	emit_signal("trigger_action", action)
 
 func _ready():
+	connect("trigger_action", GameState, "trigger_action")
 	GameState.place_manager = self
-	go_to(GameState.location)
 
 func go_to(place : String):
 	GameState.location = place
