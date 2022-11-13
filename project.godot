@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "ElementSprite",
 "language": "GDScript",
-"path": "res://scenes/Element.gd"
+"path": "res://scripts/ElementSprite.gd"
 }, {
 "base": "Node",
 "class": "FmodNative",
