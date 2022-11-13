@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Buttons/BackButton.gd"
 }, {
+"base": "ValidateButton",
+"class": "ChoiceButton",
+"language": "GDScript",
+"path": "res://ChoiceButton.gd"
+}, {
 "base": "Control",
 "class": "Choices",
 "language": "GDScript",
@@ -106,6 +111,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "BackButton": "",
+"ChoiceButton": "",
 "Choices": "",
 "ElementSprite": "",
 "FmodNative": "",

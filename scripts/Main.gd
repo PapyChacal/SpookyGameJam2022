@@ -4,6 +4,7 @@ onready var choices = $Choices
 
 func _ready():
 	GameState.trigger_action('goto:Room')
+	GameState.trigger_action('Dial3')
 
 func _process(_delta):
 	var d = GameState.le_dialogue

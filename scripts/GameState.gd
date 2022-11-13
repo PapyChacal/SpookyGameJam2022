@@ -13,11 +13,20 @@ func _ready():
 	Fmod.play_one_shot("event:/Musics/Music", self)
 	Fmod.play_sound(sound_stress)
 
+func is_goto(action : String):
+	return action.substr(0, 5) == 'goto:'
+
 func trigger_action(action : String):
-	if action.substr(0, 5) == 'goto:':
+	if is_goto(action):
 		place_manager.go_to(action.substr(5))
 	else:
 		choices.set_description(action)
+
+func reponse_cost_energy(r : reponse):
+	var action = r.next
+	if is_goto(action):
+		return 0
+	return Interactions.lines[action].energie_add
 
 func _process(_delta):
 	Fmod.set_event_parameter_by_name(sound_stress, "Stress", stress)
