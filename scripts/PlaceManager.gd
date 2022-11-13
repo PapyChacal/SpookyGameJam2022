@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 class_name PlaceManager
 
 var scenes : Dictionary = {
@@ -13,9 +13,10 @@ signal set_description
 
 func interact(name : String):
 	# Démarrer interaction avec l'objet 'name'
-	print('Interact with ', name)
+	print('PM: Interact with ', name)
 	# Le nom de l'action à déclencher
 	var action = places[GameState.location][name]
+	print('action: ', action)
 	emit_signal("set_description", action)
 
 func _ready():
@@ -28,4 +29,3 @@ func go_to(place : String):
 		remove_child(c)
 		c.queue_free()
 	add_child(scenes[place].instance())
-	
