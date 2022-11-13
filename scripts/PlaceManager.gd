@@ -28,4 +28,3 @@ func go_to(place : String):
 		remove_child(c)
 		c.queue_free()
 	add_child(scenes[place].instance())
-	

@@ -52,8 +52,6 @@ func _on_choice(choice : int):
 	if d != null :
 		if d is Interactions.dialogue_type:
 			set_description(d.possible_reponses[choice].next)
-	
-	var c = GameState.le_dialogue
 
 func _on_say_nothing():
 	emit_signal("choice_made", 0)

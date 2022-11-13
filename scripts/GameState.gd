@@ -11,6 +11,8 @@ onready var sound_stress : int = Fmod.create_event_instance("event:/Musics/Stres
 func _ready():
 	Fmod.play_one_shot("event:/Musics/Music", self)
 	Fmod.play_sound(sound_stress)
+	
+	
 
-func _process(delta):
+func _process(_delta):
 	Fmod.set_event_parameter_by_name(sound_stress, "Stress", stress)
