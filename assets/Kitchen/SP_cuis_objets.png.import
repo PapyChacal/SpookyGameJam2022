@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/horloge.png-a90fb0cb39ac0f47f0e40e4986237882.stex"
+path="res://.import/SP_cuis_objets.png-0996bfdef79b4b8cf8d13cd109425ef3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Hall_staircase/horloge.png"
-dest_files=[ "res://.import/horloge.png-a90fb0cb39ac0f47f0e40e4986237882.stex" ]
+source_file="res://assets/Kitchen/SP_cuis_objets.png"
+dest_files=[ "res://.import/SP_cuis_objets.png-0996bfdef79b4b8cf8d13cd109425ef3.stex" ]
 
 [params]
 
