@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://ChoiceButton.gd" type="Script" id=1]
-[ext_resource path="res://assets/energy.png" type="Texture" id=2]
+[ext_resource path="res://assets/flamme.png" type="Texture" id=2]
 
 [node name="Choice1" type="Button"]
 margin_right = 148.0

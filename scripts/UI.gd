@@ -1,7 +1,7 @@
 extends Control
 class_name UI
 
-export(ImageTexture) var energy_icon = preload('res://assets/energy.png')
+var energy_icon : Texture = preload('res://assets/flamme.png')
 
 onready var energy = $UIContainer/EnergyContainer
 onready var gauge = $UIContainer/StressGauge
