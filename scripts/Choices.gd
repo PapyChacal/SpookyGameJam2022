@@ -93,6 +93,7 @@ func set_description(id : String):
 	if d.personne_parlant != "":
 		$VBox/HBoxTop/Panel/Label.text = d.personne_parlant
 		$VBox/HBoxTop/Panel/Label.percent_visible = 0.0
+		$VBox/HBoxTop/Panel/Label.set_visible(true)
 	else:
 		$VBox/HBoxTop/Panel/Label.set_visible(false)
 	nrep = 0 if not d is Interactions.dialogue_type else \
