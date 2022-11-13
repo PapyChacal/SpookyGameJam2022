@@ -26,6 +26,10 @@ func interact(name : String):
 func _ready():
 	connect("trigger_action", GameState, "trigger_action")
 	GameState.place_manager = self
+	for p in scenes.values():
+		var inst = p.instance()
+		inst.init_room()
+		inst.queue_free()
 
 func go_to(place : String):
 	GameState.location = place
@@ -34,4 +38,6 @@ func go_to(place : String):
 		c.queue_free()
 	add_child(scenes[place].instance())
 	var interpelation = GameState.place_manager.places[place].inter
+	if interpelation != '':
+		GameState.place_manager.places[place].inter = ''
 	GameState.trigger_action(interpelation)

@@ -1,7 +1,7 @@
 extends Control
 
 
-func _ready():
+func init_room():
 	var place = GameState.place_manager.places[name]
 	place.elements = {
 		'door'       : 'goto:Hall1',

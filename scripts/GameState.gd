@@ -7,11 +7,15 @@ var location : String = 'Room'
 var place_manager : PlaceManager
 var choices : Choices
 
+var picked_item : SceneItem = null
+var inventory : Inventory
+
 onready var sound_stress : int = Fmod.create_event_instance("event:/Musics/Stress_Ambient")
 
 func _ready():
 	Fmod.play_one_shot("event:/Musics/Music", self)
 	Fmod.play_sound(sound_stress)
+	
 
 func is_goto(action : String):
 	return action.substr(0, 5) == 'goto:'
@@ -28,5 +32,10 @@ func reponse_cost_energy(r : reponse):
 		return 0
 	return Interactions.lines[action].energie_add
 
+func add_item(item : SceneItem):
+	inventory.add_item(item)
+
 func _process(_delta):
 	Fmod.set_event_parameter_by_name(sound_stress, "Stress", stress)
+	if picked_item != null:
+		picked_item.position = picked_item.get_global_mouse_position()
