@@ -19,12 +19,17 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Choices.gd"
 }, {
+"base": "Area2D",
+"class": "ElementSprite",
+"language": "GDScript",
+"path": "res://scenes/Element.gd"
+}, {
 "base": "Node",
 "class": "FmodNative",
 "language": "NativeScript",
 "path": "res://addons/fmod/Fmod.gdns"
 }, {
-"base": "Node2D",
+"base": "Control",
 "class": "PlaceManager",
 "language": "GDScript",
 "path": "res://scripts/PlaceManager.gd"
@@ -97,6 +102,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "BackButton": "",
 "Choices": "",
+"ElementSprite": "",
 "FmodNative": "",
 "PlaceManager": "",
 "PlayButton": "",
