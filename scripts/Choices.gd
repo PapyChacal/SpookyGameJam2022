@@ -75,8 +75,10 @@ func set_description(id : String):
 	npr_gauge.value = 1.0
 	if id == "":
 		GameState.le_dialogue = null
+		GameState.text_menu_is_used = false
 		self.set_visible(false)
 		return
+	GameState.text_menu_is_used = true
 	self.set_visible(true)
 	
 	var d : description = Interactions.lines[id]

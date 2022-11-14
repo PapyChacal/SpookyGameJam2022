@@ -12,6 +12,8 @@ var inventory : Inventory
 
 var text_speed : int = 2
 
+var text_menu_is_used : bool
+
 onready var sound_stress : int = Fmod.create_event_instance("event:/Musics/Stress_Ambient")
 
 func _ready():

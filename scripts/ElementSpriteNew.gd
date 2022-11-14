@@ -17,7 +17,8 @@ func _ready():
 	print(name, ' ready')
 
 func _input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
+	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT\
+	   and not GameState.text_menu_is_used:
 			GameState.place_manager.interact(name)
 			Fmod.play_one_shot("event:/UI/Click", self)
 
