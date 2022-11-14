@@ -44,7 +44,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/PlaceManager.gd"
 }, {
-"base": "SoundButton",
+"base": "Button",
 "class": "PlayButton",
 "language": "GDScript",
 "path": "res://scripts/Buttons/PlayButton.gd"
