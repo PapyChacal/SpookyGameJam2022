@@ -24,7 +24,9 @@ signal choice_made
 var is_question : bool = false
 var nrep = 0
 var cur_rep = 0
-
+var question_read : bool = false
+var question_on_screen : bool = false
+var interaction_on_screen : bool = false
 func _ready():
 	GameState.choices = self
 # warning-ignore:return_value_discarded
@@ -38,24 +40,38 @@ func _process(_delta):
 		GameState.text_apparing($VBox/HBoxTop/Panel/Label)
 	elif $VBox/HBox/Dialog/VBox/Text.percent_visible < 1.0:
 		GameState.text_apparing($VBox/HBox/Dialog/VBox/Text)
-	elif is_question:
+	else:
+		question_on_screen = true
+		interaction_on_screen = true
+
+	if is_question and question_on_screen and question_read:
 		if texts[cur_rep].percent_visible < 1.0:
 			GameState.text_apparing(texts[cur_rep])
-			if texts[cur_rep].percent_visible >= 1.0 and cur_rep < nrep:
-				cur_rep += 1
-		elif timer.is_stopped():
-			timer.start(answer_time)
+			if texts[cur_rep].percent_visible >= 1.0 :
+				buttons[cur_rep].set_disabled(false)
+				if cur_rep < nrep:
+					cur_rep += 1
 		else:
-			npr_gauge.value = timer.time_left / answer_time
+			if timer.is_stopped():
+				timer.start(answer_time)
+			else:
+				npr_gauge.value = timer.time_left / answer_time
 
+func question_is_read():
+	if question_on_screen:
+		question_read = true
 
-			
+func interaction_is_read():
+	if interaction_on_screen:
+		self.set_description("")
+
 func _on_choice(choice : int):
 	timer.stop()
 	npr_gauge.value = 1.0
 	var d = GameState.le_dialogue
 	if d != null :
 		if d is Interactions.dialogue_type:
+			question_read = false
 			GameState.trigger_action(d.possible_reponses[choice].next)
 
 func _on_say_nothing():
@@ -74,6 +90,7 @@ func set_description(id : String):
 	timer.stop()
 	npr_gauge.value = 1.0
 	if id == "":
+		interaction_on_screen = false
 		GameState.le_dialogue = null
 		GameState.text_menu_is_used = false
 		self.set_visible(false)
@@ -107,11 +124,12 @@ func set_description(id : String):
 	for i in range(nrep):
 		buttons[i].set_reponse(d.possible_reponses[i+1])
 		buttons[i].set_visible(true)
-		
+		buttons[i].set_disabled(true)
 	for i in range(nrep, 3):
 		buttons[i].set_visible(false)
 	
 	if is_question:
+		question_on_screen = false
 		cur_rep = 0
 	$VBox/HBoxTop/VBoxContainer.set_visible(is_question)
 	$VBox/HBox/HBox.set_visible(is_question)
