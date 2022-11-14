@@ -10,6 +10,8 @@ var choices : Choices
 var picked_item : SceneItem = null
 var inventory : Inventory
 
+var text_speed : int = 2
+
 onready var sound_stress : int = Fmod.create_event_instance("event:/Musics/Stress_Ambient")
 
 func _ready():
@@ -34,6 +36,10 @@ func reponse_cost_energy(r : reponse):
 
 func add_item(item : SceneItem):
 	inventory.add_item(item)
+
+func text_apparing(current_object):
+	var unit_of_char =  1.0 / current_object.text.length() / text_speed
+	current_object.percent_visible += unit_of_char
 
 func _process(_delta):
 	Fmod.set_event_parameter_by_name(sound_stress, "Stress", stress)

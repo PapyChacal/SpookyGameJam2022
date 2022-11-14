@@ -21,7 +21,6 @@ onready var timer : Timer = $Timer
 
 signal choice_made
 
-var text_speed = 0.008
 var is_question : bool = false
 var nrep = 0
 var cur_rep = 0
@@ -36,18 +35,20 @@ func _ready():
 
 func _process(_delta):
 	if $VBox/HBoxTop/Panel/Label.percent_visible < 1.0:
-		$VBox/HBoxTop/Panel/Label.percent_visible += text_speed
+		GameState.text_apparing($VBox/HBoxTop/Panel/Label)
 	elif $VBox/HBox/Dialog/VBox/Text.percent_visible < 1.0:
-		$VBox/HBox/Dialog/VBox/Text.percent_visible += text_speed
+		GameState.text_apparing($VBox/HBox/Dialog/VBox/Text)
 	elif is_question:
 		if texts[cur_rep].percent_visible < 1.0:
-			texts[cur_rep].percent_visible += text_speed
-			if texts[cur_rep].percent_visible >= 1.0 and cur_rep <= nrep:
+			GameState.text_apparing(texts[cur_rep])
+			if texts[cur_rep].percent_visible >= 1.0 and cur_rep < nrep:
 				cur_rep += 1
 		elif timer.is_stopped():
 			timer.start(answer_time)
 		else:
 			npr_gauge.value = timer.time_left / answer_time
+
+
 			
 func _on_choice(choice : int):
 	timer.stop()
