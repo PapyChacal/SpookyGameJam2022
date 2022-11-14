@@ -52,6 +52,7 @@ func _process(_delta):
 				if cur_rep < nrep:
 					cur_rep += 1
 		else:
+			$VBox/HBoxTop/VBoxContainer/NPRButton.set_disabled(false)
 			if timer.is_stopped():
 				timer.start(answer_time)
 			else:
@@ -130,6 +131,7 @@ func set_description(id : String):
 	
 	if is_question:
 		question_on_screen = false
+		$VBox/HBoxTop/VBoxContainer/NPRButton.set_disabled(true)
 		cur_rep = 0
 	$VBox/HBoxTop/VBoxContainer.set_visible(is_question)
 	$VBox/HBox/HBox.set_visible(is_question)
