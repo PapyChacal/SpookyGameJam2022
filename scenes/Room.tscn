@@ -1,6 +1,5 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://scripts/Interaction Objets/ShinyToggleSprite.gd" type="Script" id=2]
 [ext_resource path="res://assets/Room/porte.png" type="Texture" id=3]
 [ext_resource path="res://assets/Room/smartphone_brille2.png" type="Texture" id=4]
 [ext_resource path="res://assets/livre.png" type="Texture" id=5]
@@ -26,6 +25,7 @@ centered = false
 [node name="smartphone" parent="." instance=ExtResource( 14 )]
 position = Vector2( 371.534, 340.892 )
 scale = Vector2( 0.180964, 0.25339 )
+must_disapear = true
 
 [node name="Sprite" type="Sprite" parent="smartphone"]
 scale = Vector2( 2.4393, 2.26119 )
@@ -45,6 +45,7 @@ texture = ExtResource( 4 )
 
 [node name="door" parent="." instance=ExtResource( 14 )]
 position = Vector2( 854.672, 355.718 )
+has_limited_trys = false
 
 [node name="Sprite" type="Sprite" parent="door"]
 visible = false
@@ -56,15 +57,25 @@ visible = false
 scale = Vector2( 0.533327, 0.555562 )
 texture = ExtResource( 3 )
 
-[node name="computer" type="Sprite" parent="."]
+[node name="computer" parent="." instance=ExtResource( 14 )]
+position = Vector2( 324.243, 451.633 )
+rotation = -0.0218948
+scale = Vector2( 0.75918, 1.15051 )
+number_of_try = 4
+
+[node name="Sprite" type="Sprite" parent="computer"]
 visible = false
-position = Vector2( 327.248, 445.901 )
 scale = Vector2( 0.402431, 0.421189 )
 texture = ExtResource( 6 )
-script = ExtResource( 2 )
+
+[node name="shiny1" type="Sprite" parent="computer"]
+visible = false
+scale = Vector2( 0.402431, 0.421189 )
+texture = ExtResource( 6 )
 
 [node name="book" parent="." instance=ExtResource( 14 )]
 position = Vector2( 535.225, 297.743 )
+must_disapear = true
 
 [node name="Sprite" type="Sprite" parent="book"]
 scale = Vector2( 0.35794, 0.516887 )

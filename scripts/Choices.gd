@@ -59,11 +59,13 @@ func _process(_delta):
 				npr_gauge.value = timer.time_left / answer_time
 
 func question_is_read():
-	if question_on_screen:
+	if question_on_screen and not question_read :
+		Fmod.play_one_shot("event:/UI/Validate", self)
 		question_read = true
 
 func interaction_is_read():
-	if interaction_on_screen:
+	if interaction_on_screen :
+		Fmod.play_one_shot("event:/UI/Validate", self)
 		self.set_description("")
 
 func _on_choice(choice : int):
@@ -76,15 +78,19 @@ func _on_choice(choice : int):
 			GameState.trigger_action(d.possible_reponses[choice].next)
 
 func _on_say_nothing():
+	Fmod.play_one_shot("event:/UI/Back", self)
 	emit_signal("choice_made", 0)
 	
 func _on_choice1():
+	Fmod.play_one_shot("event:/UI/Validate", self)
 	emit_signal("choice_made", 1)
 	
 func _on_choice2():
+	Fmod.play_one_shot("event:/UI/Validate", self)
 	emit_signal("choice_made", 2)
 	
 func _on_choice3():
+	Fmod.play_one_shot("event:/UI/Validate", self)
 	emit_signal("choice_made", 3)
 	
 func set_description(id : String):
@@ -130,8 +136,11 @@ func set_description(id : String):
 		buttons[i].set_visible(false)
 	
 	if is_question:
+		#Fmod.play_one_shot("event:/UI/Dialogue", self)
 		question_on_screen = false
 		$VBox/HBoxTop/VBoxContainer/NPRButton.set_disabled(true)
 		cur_rep = 0
+	else:
+		interaction_on_screen = false
 	$VBox/HBoxTop/VBoxContainer.set_visible(is_question)
 	$VBox/HBox/HBox.set_visible(is_question)

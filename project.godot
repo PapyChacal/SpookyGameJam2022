@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "ValidateButton",
 "class": "ChoiceButton",
 "language": "GDScript",
-"path": "res://ChoiceButton.gd"
+"path": "res://scripts/Buttons/ChoiceButton.gd"
 }, {
 "base": "Control",
 "class": "Choices",
@@ -37,7 +37,7 @@ _global_script_classes=[ {
 "base": "Control",
 "class": "Inventory",
 "language": "GDScript",
-"path": "res://Inventory.gd"
+"path": "res://scripts/Inventory.gd"
 }, {
 "base": "Control",
 "class": "PlaceManager",
@@ -99,15 +99,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/element.gd"
 }, {
-"base": "Sprite",
-"class": "elementSprite",
-"language": "GDScript",
-"path": "res://scripts/elementSprite.gd"
-}, {
 "base": "Reference",
 "class": "goto",
 "language": "GDScript",
-"path": "res://goto.gd"
+"path": "res://scripts/Locality/goto.gd"
 }, {
 "base": "Node",
 "class": "place",
@@ -138,7 +133,6 @@ _global_script_class_icons={
 "description": "",
 "dialogue": "",
 "element": "",
-"elementSprite": "",
 "goto": "",
 "place": "",
 "reponse": ""

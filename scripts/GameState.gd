@@ -10,10 +10,14 @@ var choices : Choices
 var picked_item : SceneItem = null
 var inventory : Inventory
 
-var text_speed : float = 3.5
+var text_speed : float = 3
 
 var text_menu_is_used : bool
 
+var toilet_whas_not_used : bool = true
+
+var smartphone_whas_not_used : bool = true
+var book_whas_not_used : bool = true
 onready var sound_stress : int = Fmod.create_event_instance("event:/Musics/Stress_Ambient")
 
 func _ready():
@@ -24,9 +28,30 @@ func _ready():
 func is_goto(action : String):
 	return action.substr(0, 5) == 'goto:'
 
-func trigger_action(action : String):
+func is_special(action : String):
+	return action.substr(0, 8) == 'special:'
+func trigger_action(action : String, make_sound = true):
 	if is_goto(action):
-		place_manager.go_to(action.substr(5))
+		var where_goto = action.substr(5)
+		if make_sound:
+			if where_goto == 'Room':
+				Fmod.play_one_shot("event:/Environment/Transition_Stairs", self)
+			else:
+				Fmod.play_one_shot("event:/Environment/Transition_Door", self)
+		place_manager.go_to(where_goto)
+	elif is_special(action):
+		var what_special = action.substr(8)
+		if what_special == 'toilet':
+			toilet_whas_not_used = false
+			choices.set_description("")
+		if what_special.substr(0,4) == 'book':
+			print('have book')
+			book_whas_not_used = false
+			choices.set_description("")
+		if what_special.substr(0,10) == 'smartphone':
+			print('have smartphone')
+			smartphone_whas_not_used = false
+			choices.set_description("")
 	else:
 		choices.set_description(action)
 
@@ -38,7 +63,7 @@ func validate_question():
 
 func reponse_cost_energy(r : reponse):
 	var action = r.next
-	if is_goto(action) or action == "":
+	if is_goto(action) or is_special(action) or action == "":
 		return 0
 	return Interactions.lines[action].energie_add
 

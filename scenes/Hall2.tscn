@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=2]
 
+[ext_resource path="res://scenes/Hall2.gd" type="Script" id=1]
 [ext_resource path="res://assets/Hall_staircase/SP_coul_1.png" type="Texture" id=2]
 [ext_resource path="res://assets/Hall_staircase/SP_coul_1_fog.png" type="Texture" id=3]
 [ext_resource path="res://assets/People/brother.png" type="Texture" id=4]
-[ext_resource path="res://scripts/Locality/Hall1.gd" type="Script" id=5]
 [ext_resource path="res://scenes/ElementSprite.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/Hall_staircase/escalier.png" type="Texture" id=7]
 [ext_resource path="res://assets/Hall_staircase/escalier_shiny.png" type="Texture" id=8]
@@ -14,8 +14,8 @@
 [ext_resource path="res://assets/Hall_staircase/porte_cuisine.png" type="Texture" id=13]
 [ext_resource path="res://assets/Hall_staircase/porte_cuisine_shiny.png" type="Texture" id=14]
 
-[node name="Hall1" type="Control"]
-script = ExtResource( 5 )
+[node name="Hall2" type="Control"]
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -27,7 +27,6 @@ centered = false
 
 [node name="brother" parent="." instance=ExtResource( 6 )]
 position = Vector2( 198.889, 394.244 )
-has_limited_trys = false
 
 [node name="Sprite" type="Sprite" parent="brother"]
 scale = Vector2( 0.15, 0.15 )

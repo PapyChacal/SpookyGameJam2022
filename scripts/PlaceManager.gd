@@ -4,12 +4,14 @@ class_name PlaceManager
 var scenes : Dictionary = {
 	'Room'     : preload("res://scenes/Room.tscn"),
 	'Hall1'    : preload("res://scenes/Hall1.tscn"),
+	'Hall2'    : preload("res://scenes/Hall2.tscn"),
 	'Kitchen1' : preload("res://scenes/Kitchen1.tscn")
 }
 
 var places : Dictionary = {
 	'Room' : place.new(),
 	'Hall1': place.new(),
+	'Hall2': place.new(),
 	'Kitchen1': place.new()
 }
 
@@ -33,10 +35,12 @@ func _ready():
 
 func go_to(place : String):
 	GameState.location = place
+	var inst = scenes[place].instance()
+	inst.update_room()
 	for c in get_children():
 		remove_child(c)
 		c.queue_free()
-	add_child(scenes[place].instance())
+	add_child(inst)
 	var interpelation = GameState.place_manager.places[place].inter
 	if interpelation != '':
 		GameState.place_manager.places[place].inter = ''
