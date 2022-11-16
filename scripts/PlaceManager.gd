@@ -46,4 +46,5 @@ func go_to(place : String):
 	var interpelation = GameState.place_manager.places[place].inter
 	if interpelation != '':
 		GameState.place_manager.places[place].inter = ''
+	
 	GameState.trigger_action(interpelation)

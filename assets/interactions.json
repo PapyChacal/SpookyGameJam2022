@@ -55,7 +55,7 @@
     "text": "You know, it will be a day like every other. You'll be fine...",
     "stress_add": -10,
     "energie_add": -1,
-    "next": ""
+    "next": "element#mother###"
     },
 "Des7": {
     "personne_parlant": "Mother",
@@ -164,15 +164,15 @@
     "possible_reponses": [
       {
         "text": "No answer",
-        "next": ""
+        "next": "element#magazine###"
       },
       {
         "text": "Yes!",
-        "next": "special:brother_apear:Des9"
+        "next": "element#magazine##special:brother_apear:Des9#"
       },
       {
         "text": "No...",
-        "next": ""
+        "next": "element#magazine##"
       }
     ]
   },
@@ -269,21 +269,21 @@
     "text": "Nice, just ignore your poor mother.",
     "stress_add": 0,
     "energie_add": 0,
-    "next": ""
+    "next": "element#chocolat_small###"
   },
   "AA3": {
     "personne_parlant": "Mother",
     "text": "Well, sit with me, my love.",
     "stress_add": 0,
     "energie_add": 0,
-    "next": "Dial4"
+    "next": "element#chocolat_small##Dial4#"
   },
   "BB3": {
     "personne_parlant": "Mother",
     "text": "Fine, I don't take it personnally.",
     "stress_add": 0,
     "energie_add": -1,
-    "next": ""
+    "next": "element#chocolat_small###"
   },
 
   "Dial3": {
@@ -412,21 +412,21 @@
     "text": "You're such a weirdo...",
     "stress_add": 0,
     "energie_add": 0,
-    "next": ""
+    "next": "element#brother###"
   },
   "AA6": {
     "personne_parlant": "Tom",
     "text": "Ah ah yes, don't do anything stupid with it...And you should think about a part-time job to be less dependent on others.",
     "stress_add": 0,
     "energie_add": 0,
-    "next": ""
+    "next": "element#brother###"
   },
   "BB6": {
     "personne_parlant": "Tom",
     "text": "F*ck, really?! I'll have a look.",
     "stress_add": 0,
     "energie_add": 0,
-    "next": "special:brother_disapear"
+    "next": "element#brother##special:brother_disapear#"
   },
 
   "Dial6": {

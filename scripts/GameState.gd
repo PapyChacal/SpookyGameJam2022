@@ -35,6 +35,9 @@ func is_goto(action : String):
 
 func is_special(action : String):
 	return action.substr(0, 8) == 'special:'
+	
+func is_element(action : String):
+	return action.substr(0, 8) == 'element#'
 
 func trigger_action(action : String, make_sound = true):
 	if is_goto(action):
@@ -75,7 +78,13 @@ func trigger_action(action : String, make_sound = true):
 			place_manager.get_child(0).get_node("brother").visible = true
 			place_manager.get_child(0).get_node("brother").must_disapear = false
 			choices.set_description(what_special.substr(14))
-			
+	elif is_element(action):
+		var what_element : String = action.substr(8)
+		var change_element = what_element.split('#')
+		place_manager.places[place_manager.get_child(0).name].elements[change_element[0]] = \
+		   change_element[1]
+		trigger_action(change_element[2])
+		
 	else:
 		choices.set_description(action)
 
@@ -87,7 +96,7 @@ func validate_question():
 
 func reponse_cost_energy(r : reponse):
 	var action = r.next
-	if is_goto(action) or is_special(action) or action == "":
+	if is_goto(action) or is_special(action) or is_element(action) or action == "":
 		return 0
 	return Interactions.lines[action].energie_add
 

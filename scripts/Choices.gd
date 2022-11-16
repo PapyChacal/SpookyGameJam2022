@@ -54,7 +54,6 @@ func _process(_delta):
 					cur_rep += 1
 		else:
 			$VBox/HBoxTop/VBoxContainer/NPRButton.set_disabled(false)
-			show_responses = false
 			if timer.is_stopped():
 				timer.start(answer_time)
 			else:
@@ -76,6 +75,7 @@ func _on_choice(choice : int):
 	var d = GameState.le_dialogue
 	if d != null :
 		if d is Interactions.dialogue_type:
+			show_responses = false
 			GameState.trigger_action(d.possible_reponses[choice].next)
 
 func _on_say_nothing():

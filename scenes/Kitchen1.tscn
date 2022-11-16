@@ -41,7 +41,6 @@ position = Vector2( 650.802, 392.162 )
 
 [node name="trash_can" parent="." instance=ExtResource( 9 )]
 position = Vector2( 730.195, 524.101 )
-has_limited_trys = false
 
 [node name="SP_cuis_ normal_1_fog" type="Sprite" parent="."]
 position = Vector2( -3.70129, 0 )
