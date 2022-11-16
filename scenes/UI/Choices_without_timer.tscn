@@ -1,0 +1,138 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/Buttons/BackButton.gd" type="Script" id=2]
+[ext_resource path="res://scenes/UI/ChoiceButton.tscn" type="PackedScene" id=3]
+
+[node name="VBox" type="Control"]
+anchor_left = 0.1
+anchor_top = 0.78
+anchor_right = 0.9
+anchor_bottom = 0.98
+margin_top = -21.9999
+margin_right = 6.10352e-05
+margin_bottom = 2.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxTop" type="HBoxContainer" parent="."]
+margin_right = 594.5
+margin_bottom = 50.0
+grow_horizontal = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="PanelContainer" parent="HBoxTop"]
+margin_top = 22.0
+margin_right = 88.0
+margin_bottom = 50.0
+mouse_filter = 1
+size_flags_horizontal = 9
+size_flags_vertical = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HBoxTop/Panel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 81.0
+margin_bottom = 21.0
+grow_vertical = 0
+mouse_filter = 1
+text = "Personnage"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="Control" parent="."]
+margin_left = 594.5
+margin_right = 819.0
+margin_bottom = 50.0
+grow_horizontal = 0
+size_flags_horizontal = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NPRGauge" type="ProgressBar" parent="VBoxContainer"]
+margin_right = 224.0
+margin_bottom = 14.0
+mouse_filter = 1
+max_value = 1.0
+step = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NPRButton" type="Button" parent="VBoxContainer"]
+margin_top = 17.1426
+margin_right = 224.0
+margin_bottom = 47.1426
+mouse_filter = 1
+text = "Say nothing"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="."]
+margin_top = 54.0
+margin_right = 819.0
+margin_bottom = 143.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialog" type="Panel" parent="HBox"]
+margin_right = 362.0
+margin_bottom = 89.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.8
+
+[node name="VBox" type="VBoxContainer" parent="HBox/Dialog"]
+anchor_left = 0.02
+anchor_top = 0.02
+anchor_right = 0.98
+anchor_bottom = 0.98
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="Label" parent="HBox/Dialog/VBox"]
+margin_right = 347.0
+margin_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HBox" type="HBoxContainer" parent="HBox"]
+margin_left = 366.0
+margin_right = 819.0
+margin_bottom = 89.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Choice1" parent="HBox/HBox" instance=ExtResource( 3 )]
+margin_bottom = 89.0
+
+[node name="Choice2" parent="HBox/HBox" instance=ExtResource( 3 )]
+margin_left = 152.0
+margin_right = 300.0
+margin_bottom = 89.0
+
+[node name="Choice3" parent="HBox/HBox" instance=ExtResource( 3 )]
+margin_left = 304.0
+margin_right = 453.0
+margin_bottom = 89.0

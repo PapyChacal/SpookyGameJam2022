@@ -12,8 +12,8 @@ onready var texts : Array = [
 	$VBox/HBox/HBox/Choice3/VBox/Text,
 ]
 
-onready var npr_gauge = $VBox/HBoxTop/VBoxContainer/NPRGauge
-onready var npr_button = $VBox/HBoxTop/VBoxContainer/NPRButton
+onready var npr_gauge = $VBox/VBoxContainer/NPRGauge
+onready var npr_button = $VBox/VBoxContainer/NPRButton
 
 export(float) var answer_time = 7.0
 
@@ -53,7 +53,7 @@ func _process(_delta):
 				if cur_rep < nrep:
 					cur_rep += 1
 		else:
-			$VBox/HBoxTop/VBoxContainer/NPRButton.set_disabled(false)
+			$VBox/VBoxContainer/NPRButton.set_disabled(false)
 			if timer.is_stopped():
 				timer.start(answer_time)
 			else:
@@ -124,9 +124,9 @@ func set_description(id : String):
 	if d.personne_parlant != "":
 		$VBox/HBoxTop/Panel/Label.text = d.personne_parlant
 		$VBox/HBoxTop/Panel/Label.percent_visible = 0.0
-		$VBox/HBoxTop/Panel/Label.set_visible(true)
+		$VBox/HBoxTop/Panel.set_visible(true)
 	else:
-		$VBox/HBoxTop/Panel/Label.set_visible(false)
+		$VBox/HBoxTop/Panel.set_visible(false)
 	nrep = 0 if not d is Interactions.dialogue_type else \
 			   d.possible_reponses.size() - 1
 	is_question = nrep != 0
@@ -140,7 +140,7 @@ func set_description(id : String):
 	nrep -= 1
 	if is_question:
 		#Fmod.play_one_shot("event:/UI/Dialogue", Skipp_Fmod_Errors)
-		$VBox/HBoxTop/VBoxContainer/NPRButton.set_disabled(true)
+		$VBox/VBoxContainer/NPRButton.set_disabled(true)
 		cur_rep = 0
-	$VBox/HBoxTop/VBoxContainer.set_visible(is_question)
+	$VBox/VBoxContainer.set_visible(is_question)
 	$VBox/HBox/HBox.set_visible(is_question)
