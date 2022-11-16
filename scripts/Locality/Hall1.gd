@@ -1,7 +1,7 @@
 extends Control
 
 func update_room():
-	pass
+	$toilet.is_usable = GameState.toilet_whas_not_used
 
 func init_room():
 	var place = GameState.place_manager.places[name]

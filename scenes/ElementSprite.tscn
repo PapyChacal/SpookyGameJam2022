@@ -5,5 +5,3 @@
 [node name="ElementSprite" type="Area2D"]
 position = Vector2( 431.512, 226.244 )
 script = ExtResource( 1 )
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

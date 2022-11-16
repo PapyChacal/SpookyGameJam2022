@@ -16,7 +16,8 @@ func _ready():
 	extents.x *= sprite.scale.x
 	extents.y *= sprite.scale.y
 	collision.shape.extents = extents
-	
+	connect('mouse_entered', self, '_on_mouse_entered')
+	connect('mouse_exited', self, '_on_mouse_exited')
 	for s in get_shinies():
 		s.visible = false
 	
@@ -69,3 +70,4 @@ func _on_mouse_exited():
 	if is_usable:
 		for s in get_shinies():
 			s.visible = false
+

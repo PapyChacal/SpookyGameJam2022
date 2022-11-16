@@ -30,6 +30,7 @@ func is_goto(action : String):
 
 func is_special(action : String):
 	return action.substr(0, 8) == 'special:'
+
 func trigger_action(action : String, make_sound = true):
 	if is_goto(action):
 		var where_goto = action.substr(5)
@@ -42,14 +43,13 @@ func trigger_action(action : String, make_sound = true):
 	elif is_special(action):
 		var what_special = action.substr(8)
 		if what_special == 'toilet':
+			print('have toilet')
 			toilet_whas_not_used = false
 			choices.set_description("")
 		if what_special.substr(0,4) == 'book':
-			print('have book')
 			book_whas_not_used = false
 			choices.set_description("")
 		if what_special.substr(0,10) == 'smartphone':
-			print('have smartphone')
 			smartphone_whas_not_used = false
 			choices.set_description("")
 	else:

@@ -1,12 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
+[ext_resource path="res://scenes/Elements/smartphone.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/Room/porte.png" type="Texture" id=3]
-[ext_resource path="res://assets/Room/smartphone_brille2.png" type="Texture" id=4]
 [ext_resource path="res://assets/livre.png" type="Texture" id=5]
 [ext_resource path="res://assets/Room/ordi_brille.png" type="Texture" id=6]
-[ext_resource path="res://assets/Room/smartphone_brille1.png" type="Texture" id=7]
 [ext_resource path="res://assets/livre_brille.png" type="Texture" id=8]
-[ext_resource path="res://assets/Room/smartphone.png" type="Texture" id=9]
 [ext_resource path="res://assets/Room/chambre.png" type="Texture" id=10]
 [ext_resource path="res://scripts/Locality/Room.gd" type="Script" id=13]
 [ext_resource path="res://scenes/ElementSprite.tscn" type="PackedScene" id=14]
@@ -21,27 +19,6 @@ __meta__ = {
 scale = Vector2( 0.533327, 0.555562 )
 texture = ExtResource( 10 )
 centered = false
-
-[node name="smartphone" parent="." instance=ExtResource( 14 )]
-position = Vector2( 371.534, 340.892 )
-scale = Vector2( 0.180964, 0.25339 )
-must_disapear = true
-
-[node name="Sprite" type="Sprite" parent="smartphone"]
-scale = Vector2( 2.4393, 2.26119 )
-texture = ExtResource( 9 )
-
-[node name="shiny1" type="Sprite" parent="smartphone"]
-visible = false
-position = Vector2( -3.43542, -9.71812 )
-scale = Vector2( 2.14108, 2.40483 )
-texture = ExtResource( 7 )
-
-[node name="shiny2" type="Sprite" parent="smartphone"]
-visible = false
-position = Vector2( 6.0105, 2.53407 )
-scale = Vector2( 1.87712, 2.09978 )
-texture = ExtResource( 4 )
 
 [node name="door" parent="." instance=ExtResource( 14 )]
 position = Vector2( 854.672, 355.718 )
@@ -72,6 +49,10 @@ texture = ExtResource( 6 )
 visible = false
 scale = Vector2( 0.402431, 0.421189 )
 texture = ExtResource( 6 )
+
+[node name="smartphone" parent="." instance=ExtResource( 2 )]
+position = Vector2( 365.89, 352.043 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="book" parent="." instance=ExtResource( 14 )]
 position = Vector2( 535.225, 297.743 )

@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://scenes/Hall2.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Locality/Hall2.gd" type="Script" id=1]
 [ext_resource path="res://assets/Hall_staircase/SP_coul_1.png" type="Texture" id=2]
 [ext_resource path="res://assets/Hall_staircase/SP_coul_1_fog.png" type="Texture" id=3]
 [ext_resource path="res://assets/People/brother.png" type="Texture" id=4]
