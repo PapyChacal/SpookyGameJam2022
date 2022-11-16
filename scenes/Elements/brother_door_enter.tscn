@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/ElementSpriteNew.gd" type="Script" id=1]
+[ext_resource path="res://assets/Hall_staircase/porte_frere.png" type="Texture" id=2]
+[ext_resource path="res://assets/Hall_staircase/porte_frere_shiny.png" type="Texture" id=3]
+
+[node name="brother_door_enter" type="Area2D"]
+scale = Vector2( 0.533, 0.556 )
+script = ExtResource( 1 )
+is_usable = false
+has_limited_trys = false
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 2 )
+
+[node name="shiny1" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 3 )

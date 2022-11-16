@@ -11,7 +11,7 @@ func _process(_delta):
 	   and Input.is_action_just_released("ui_select"):
 		if d.get('possible_reponses') == null:
 			if d.next != "" :
-				Fmod.play_one_shot("event:/UI/Validate", self)
+				Fmod.play_one_shot("event:/UI/Validate", Skipp_Fmod_Errors)
 				GameState.trigger_action(d.next)
 			else :
 				GameState.validate_interaction()

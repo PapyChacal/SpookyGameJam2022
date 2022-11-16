@@ -16,8 +16,8 @@ func _ready():
 	extents.x *= sprite.scale.x
 	extents.y *= sprite.scale.y
 	collision.shape.extents = extents
-	connect('mouse_entered', self, '_on_mouse_entered')
-	connect('mouse_exited', self, '_on_mouse_exited')
+	GameState._unused_connect_warning = connect('mouse_entered', self, '_on_mouse_entered')
+	GameState._unused_connect_warning = connect('mouse_exited', self, '_on_mouse_exited')
 	for s in get_shinies():
 		s.visible = false
 	
@@ -28,7 +28,7 @@ func _ready():
 		sprite.visible = false
 		for s in get_shinies():
 			s.visible = false
-func _input_event(viewport, event, shape_idx):
+func _input_event(_viewport, event, _shape_idx):
 	if is_usable:
 		var can_click = true
 		if has_limited_trys:
@@ -37,13 +37,19 @@ func _input_event(viewport, event, shape_idx):
 		   and event.pressed and event.button_index == BUTTON_LEFT\
 		   and not GameState.text_menu_is_used:
 				GameState.place_manager.interact(name)
-				Fmod.play_one_shot("event:/UI/Click", self)
+				Fmod.play_one_shot("event:/UI/Click", Skipp_Fmod_Errors)
 				current_try+=1
-		if must_disapear and (current_try == number_of_try or not has_limited_trys):
+	else:
+		for s in get_shinies():
+			s.visible = false
+		if must_disapear:
 			sprite.visible = false
-			for s in get_shinies():
-				s.visible = false
-		
+
+func _process(_delta):
+	if must_disapear and (current_try == number_of_try or not has_limited_trys):
+		sprite.visible = false
+		for s in get_shinies():
+			s.visible = false
 
 func get_shinies():
 	var shinies : Array = []
@@ -59,15 +65,19 @@ func _on_mouse_entered():
 		if has_limited_trys:
 			can_click = current_try < number_of_try
 		if can_click:
-			Fmod.play_one_shot_attached("event:/UI/Over", self)
+			Fmod.play_one_shot_attached("event:/UI/Over", Skipp_Fmod_Errors)
 			for s in get_shinies():
 				s.visible = true
 		else:
 			for s in get_shinies():
 				s.visible = false
+	else:
+		for s in get_shinies():
+			s.visible = false
 
 func _on_mouse_exited():
 	if is_usable:
 		for s in get_shinies():
 			s.visible = false
+	
 

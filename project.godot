@@ -148,6 +148,7 @@ run/main_scene="res://scenes/MainMenu.tscn"
 Fmod="*res://addons/fmod/Fmod.gd"
 FModInit="*res://scripts/FModInit.gd"
 Interactions="*res://scripts/Interactions.gd"
+Skipp_Fmod_Errors="*res://scripts/Skipp_Fmod_Errors.gd"
 GameState="*res://scripts/GameState.gd"
 
 [display]

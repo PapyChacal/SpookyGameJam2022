@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/Locality/Hall2.gd" type="Script" id=1]
 [ext_resource path="res://assets/Hall_staircase/SP_coul_1.png" type="Texture" id=2]
 [ext_resource path="res://assets/Hall_staircase/SP_coul_1_fog.png" type="Texture" id=3]
 [ext_resource path="res://assets/People/brother.png" type="Texture" id=4]
+[ext_resource path="res://scenes/Elements/brother_door_enter.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/ElementSprite.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/Hall_staircase/escalier.png" type="Texture" id=7]
 [ext_resource path="res://assets/Hall_staircase/escalier_shiny.png" type="Texture" id=8]
@@ -25,6 +26,9 @@ scale = Vector2( 0.533, 0.555531 )
 texture = ExtResource( 2 )
 centered = false
 
+[node name="brother_door_enter" parent="." instance=ExtResource( 5 )]
+position = Vector2( 94.5757, 339.179 )
+
 [node name="brother" parent="." instance=ExtResource( 6 )]
 position = Vector2( 198.889, 394.244 )
 
@@ -35,7 +39,7 @@ texture = ExtResource( 4 )
 [node name="plant" parent="." instance=ExtResource( 6 )]
 position = Vector2( 317.317, 376.467 )
 scale = Vector2( 0.533, 0.555531 )
-number_of_try = 4
+has_limited_trys = false
 
 [node name="Sprite" type="Sprite" parent="plant"]
 texture = ExtResource( 11 )

@@ -25,8 +25,8 @@ var is_question : bool = false
 var nrep = 0
 var cur_rep = 0
 var question_read : bool = false
-var question_on_screen : bool = false
-var interaction_on_screen : bool = false
+var interaction_question_on_screen : bool = true
+var show_responses : bool = false
 func _ready():
 	GameState.choices = self
 # warning-ignore:return_value_discarded
@@ -41,31 +41,33 @@ func _process(_delta):
 	elif $VBox/HBox/Dialog/VBox/Text.percent_visible < 1.0:
 		GameState.text_apparing($VBox/HBox/Dialog/VBox/Text)
 	else:
-		question_on_screen = true
-		interaction_on_screen = true
+		interaction_question_on_screen = true
 
-	if is_question and question_on_screen and question_read:
+	if is_question and show_responses:
 		if texts[cur_rep].percent_visible < 1.0:
 			GameState.text_apparing(texts[cur_rep])
 			if texts[cur_rep].percent_visible >= 1.0 :
+				buttons[cur_rep].get_node("Energy").visible = \
+				   GameState.reponse_cost_energy(GameState.le_dialogue.possible_reponses[cur_rep+1])
 				buttons[cur_rep].set_disabled(false)
 				if cur_rep < nrep:
 					cur_rep += 1
 		else:
 			$VBox/HBoxTop/VBoxContainer/NPRButton.set_disabled(false)
+			show_responses = false
 			if timer.is_stopped():
 				timer.start(answer_time)
 			else:
 				npr_gauge.value = timer.time_left / answer_time
 
 func question_is_read():
-	if question_on_screen and not question_read :
-		Fmod.play_one_shot("event:/UI/Validate", self)
-		question_read = true
+	if interaction_question_on_screen :
+		show_responses = true
+		Fmod.play_one_shot("event:/UI/Validate", Skipp_Fmod_Errors)
 
 func interaction_is_read():
-	if interaction_on_screen :
-		Fmod.play_one_shot("event:/UI/Validate", self)
+	if interaction_question_on_screen :
+		Fmod.play_one_shot("event:/UI/Validate", Skipp_Fmod_Errors)
 		self.set_description("")
 
 func _on_choice(choice : int):
@@ -74,30 +76,31 @@ func _on_choice(choice : int):
 	var d = GameState.le_dialogue
 	if d != null :
 		if d is Interactions.dialogue_type:
-			question_read = false
 			GameState.trigger_action(d.possible_reponses[choice].next)
 
 func _on_say_nothing():
-	Fmod.play_one_shot("event:/UI/Back", self)
+	Fmod.play_one_shot("event:/UI/Back", Skipp_Fmod_Errors)
 	emit_signal("choice_made", 0)
 	
 func _on_choice1():
-	Fmod.play_one_shot("event:/UI/Validate", self)
+	Fmod.play_one_shot("event:/UI/Validate", Skipp_Fmod_Errors)
 	emit_signal("choice_made", 1)
 	
 func _on_choice2():
-	Fmod.play_one_shot("event:/UI/Validate", self)
+	Fmod.play_one_shot("event:/UI/Validate", Skipp_Fmod_Errors)
 	emit_signal("choice_made", 2)
 	
 func _on_choice3():
-	Fmod.play_one_shot("event:/UI/Validate", self)
+	Fmod.play_one_shot("event:/UI/Validate", Skipp_Fmod_Errors)
 	emit_signal("choice_made", 3)
 	
 func set_description(id : String):
+	if not interaction_question_on_screen:
+		return
 	timer.stop()
 	npr_gauge.value = 1.0
+	interaction_question_on_screen = false
 	if id == "":
-		interaction_on_screen = false
 		GameState.le_dialogue = null
 		GameState.text_menu_is_used = false
 		self.set_visible(false)
@@ -108,9 +111,9 @@ func set_description(id : String):
 	var d : description = Interactions.lines[id]
 		
 	if d.energie_add > 0:
-		Fmod.play_one_shot("event:/UI/Energy_Fill", self)
+		Fmod.play_one_shot("event:/UI/Energy_Fill", Skipp_Fmod_Errors)
 	elif d.energie_add < 0:
-		Fmod.play_one_shot("event:/UI/Energy_Use", self)
+		Fmod.play_one_shot("event:/UI/Energy_Use", Skipp_Fmod_Errors)
 	GameState.energy += d.energie_add
 	GameState.stress += d.stress_add
 	GameState.energy = min(GameState.energy, 3)
@@ -127,20 +130,17 @@ func set_description(id : String):
 	nrep = 0 if not d is Interactions.dialogue_type else \
 			   d.possible_reponses.size() - 1
 	is_question = nrep != 0
-	print(str(nrep))
+	#print(str(nrep))
 	for i in range(nrep):
 		buttons[i].set_reponse(d.possible_reponses[i+1])
 		buttons[i].set_visible(true)
 		buttons[i].set_disabled(true)
 	for i in range(nrep, 3):
 		buttons[i].set_visible(false)
-	
+	nrep -= 1
 	if is_question:
-		#Fmod.play_one_shot("event:/UI/Dialogue", self)
-		question_on_screen = false
+		#Fmod.play_one_shot("event:/UI/Dialogue", Skipp_Fmod_Errors)
 		$VBox/HBoxTop/VBoxContainer/NPRButton.set_disabled(true)
 		cur_rep = 0
-	else:
-		interaction_on_screen = false
 	$VBox/HBoxTop/VBoxContainer.set_visible(is_question)
 	$VBox/HBox/HBox.set_visible(is_question)

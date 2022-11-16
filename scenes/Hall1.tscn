@@ -26,7 +26,7 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="brother" parent="." instance=ExtResource( 6 )]
-position = Vector2( 198.889, 394.244 )
+position = Vector2( 198.889, 393.244 )
 has_limited_trys = false
 
 [node name="Sprite" type="Sprite" parent="brother"]
@@ -36,7 +36,7 @@ texture = ExtResource( 4 )
 [node name="plant" parent="." instance=ExtResource( 6 )]
 position = Vector2( 317.317, 376.467 )
 scale = Vector2( 0.533, 0.555531 )
-number_of_try = 4
+has_limited_trys = false
 
 [node name="Sprite" type="Sprite" parent="plant"]
 texture = ExtResource( 11 )

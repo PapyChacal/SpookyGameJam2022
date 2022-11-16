@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/ElementSpriteNew.gd" type="Script" id=1]
+[ext_resource path="res://assets/Kitchen/radio_shiny1.png" type="Texture" id=2]
+[ext_resource path="res://assets/Kitchen/radio.png" type="Texture" id=3]
+[ext_resource path="res://assets/Kitchen/radio_shiny2.png" type="Texture" id=4]
+
+[node name="radio" type="Area2D"]
+scale = Vector2( 0.533, 0.556 )
+script = ExtResource( 1 )
+has_limited_trys = false
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="shiny1" type="Sprite" parent="."]
+visible = false
+position = Vector2( 17.3841, -8.17527 )
+texture = ExtResource( 2 )
+
+[node name="shiny2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, 1.25773 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 4 )

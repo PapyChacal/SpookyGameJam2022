@@ -38,7 +38,7 @@ texture = ExtResource( 3 )
 position = Vector2( 324.243, 451.633 )
 rotation = -0.0218948
 scale = Vector2( 0.75918, 1.15051 )
-number_of_try = 4
+has_limited_trys = false
 
 [node name="Sprite" type="Sprite" parent="computer"]
 visible = false

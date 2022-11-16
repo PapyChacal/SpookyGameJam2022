@@ -14,9 +14,9 @@ func _ready():
 		s.visible = false
 	
 	add_child(collision)
-	print(name, ' ready')
+#	print(name, ' ready')
 
-func _input_event(viewport, event, shape_idx):
+func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
 #			GameState.add_item(self)
 			GameState.picked_item = self

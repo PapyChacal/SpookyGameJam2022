@@ -54,7 +54,7 @@
     "personne_parlant": "Mother",
     "text": "You know, it will be a day like every other. You'll be fine...",
     "stress_add": -10,
-    "energie_add": 0,
+    "energie_add": -1,
     "next": ""
     },
 "Des7": {
@@ -62,7 +62,7 @@
     "text": "Oh, ask your brother to give you some money for today. Please don't skip lunch!",
     "stress_add": 0,
     "energie_add": 0,
-    "next": "goto:Hall2"
+    "next": ""
   },
 "Des8": {
     "personne_parlant": "",
@@ -168,7 +168,7 @@
       },
       {
         "text": "Yes!",
-        "next": ""
+        "next": "special:brother_apear:Des9"
       },
       {
         "text": "No...",
@@ -251,11 +251,11 @@
     "possible_reponses": [
       {
         "text": "No answer",
-        "next": "CC2"
+        "next": "special:radio:music:CC2"
       },
       {
         "text": "No, nice idea!",
-        "next": "AA2"
+        "next": "special:radio:music:AA2"
       },
       {
           "text": "I really prefer silence.",
@@ -426,7 +426,7 @@
     "text": "F*ck, really?! I'll have a look.",
     "stress_add": 0,
     "energie_add": 0,
-    "next": ""
+    "next": "special:brother_disapear"
   },
 
   "Dial6": {

@@ -5,16 +5,16 @@ func _ready():
 	GameState.inventory = self
 
 func _on_trigger():
-	print('Inventory trigger')
+#	print('Inventory trigger')
 	$Zone.visible = true
 
 
 func _on_untrigger():
-	print('Inventory trigger')
+#	print('Inventory trigger')
 	$Zone.visible = false
 
 func add_item(item : SceneItem):
-	print('Add ', item.name, ' to inventory.')
+#	print('Add ', item.name, ' to inventory.')
 	item.get_parent().remove_child(item)
 	var cont = CenterContainer.new()
 	cont.add_child(item)
