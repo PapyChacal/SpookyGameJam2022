@@ -16,3 +16,9 @@ func init_room():
 		'brother_door_enter' : 'goto:BrotherRoom',
 	}
 	place.inter = ''
+
+func _on_toilet_input_event(_viewport, _event, _shape_idx):
+	if GameState.energy == 3:
+		$toilet.is_usable = false
+	else:
+		$toilet.is_usable = GameState.toilet_whas_not_used

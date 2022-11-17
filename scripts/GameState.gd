@@ -115,7 +115,22 @@ func text_apparing(current_object, speed = text_speed):
 	var unit_of_char =  1.0 / current_object.text.length() / speed
 	current_object.percent_visible += unit_of_char
 
+func death():
+	if GameState.stress >= 100:
+		energy = 3
+		stress = 0.0
+		picked_item = null
+		toilet_whas_not_used = true
+		brother_is_not_here = false
+		brother_is_in_his_room = false
+		smartphone_whas_not_used = true
+		book_whas_not_used = true
+		place_manager.init()
+		place_manager.go_to('Death')
+		choices.set_description("DesDeath")
+
 func _process(_delta):
+	death()
 	#Fmod.set_event_parameter_by_name(Skipp_Fmod_Errors.sound_stress, "Stress", stress)
 	if picked_item != null:
 		picked_item.position = picked_item.get_global_mouse_position()

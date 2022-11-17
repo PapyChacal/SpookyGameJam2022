@@ -1,4 +1,11 @@
 {
+"DesDeath": {
+      "personne_parlant": "",
+      "text": "You Died !",
+      "stress_add": 0,
+      "energie_add": 0,
+      "next": ""
+    },  
 "Des00": {
     "personne_parlant": "",
     "text": "OK... Time to go.\n(Press space to continue)",
@@ -375,7 +382,14 @@
     "text": "...",
     "stress_add": 10,
     "energie_add": 0,
-    "next": "You know I'm telling the truth. You are disrespectful and you KNOW it."
+    "next": ""
+  },
+  "AA51": {
+    "personne_parlant": "Mother",
+    "text": "You know I'm telling the truth. You are disrespectful and you KNOW it.",
+    "stress_add": 0,
+    "energie_add": 0,
+    "next": ""
   },
   "BB5": {
     "personne_parlant": "Mother",

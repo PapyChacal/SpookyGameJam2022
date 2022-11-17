@@ -13,3 +13,10 @@ func init_room():
 		'door_kitchen' : 'goto:Kitchen1'
 	}
 	place.inter = 'Dial1'
+
+
+func _on_toilet_input_event(_viewport, _event, _shape_idx):
+	if GameState.energy == 3:
+		$toilet.is_usable = false
+	else:
+		$toilet.is_usable = GameState.toilet_whas_not_used

@@ -6,7 +6,8 @@ var scenes : Dictionary = {
 	'Hall1'    : preload("res://scenes/Hall1.tscn"),
 	'Hall2'    : preload("res://scenes/Hall2.tscn"),
 	'Kitchen1' : preload("res://scenes/Kitchen1.tscn"),
-	'BrotherRoom' : preload("res://scenes/BrotherRoom.tscn")
+	'BrotherRoom' : preload("res://scenes/BrotherRoom.tscn"),
+	'Death'       : preload("res://scenes/Death.tscn")
 }
 
 var places : Dictionary = {
@@ -14,7 +15,8 @@ var places : Dictionary = {
 	'Hall1': place.new(),
 	'Hall2': place.new(),
 	'Kitchen1': place.new(),
-	'BrotherRoom': place.new()
+	'BrotherRoom': place.new(),
+	'Death' : place.new()
 }
 
 signal trigger_action
@@ -29,6 +31,9 @@ func interact(name : String):
 
 func _ready():
 	GameState._unused_connect_warning = connect("trigger_action", GameState, "trigger_action")
+	init()
+
+func init():
 	GameState.place_manager = self
 	for p in scenes.values():
 		var inst = p.instance()

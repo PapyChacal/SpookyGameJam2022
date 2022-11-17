@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/Locality/Kitchen1.gd" type="Script" id=1]
 [ext_resource path="res://assets/Kitchen/SP_cuis_ normal_1.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scenes/Elements/chocolat_small.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Elements/radio.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Elements/trash_can.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scripts/ElementSpritePersone.gd" type="Script" id=10]
 
 [node name="Kitchen1" type="Control"]
 margin_left = -1.71478
@@ -28,6 +29,7 @@ position = Vector2( 49.1127, 267.305 )
 
 [node name="mother" parent="." instance=ExtResource( 5 )]
 position = Vector2( 249.834, 386.781 )
+script = ExtResource( 10 )
 
 [node name="Sprite" type="Sprite" parent="mother"]
 scale = Vector2( 0.15, 0.15 )

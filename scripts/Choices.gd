@@ -47,9 +47,13 @@ func _process(_delta):
 		if texts[cur_rep].percent_visible < 1.0:
 			GameState.text_apparing(texts[cur_rep])
 			if texts[cur_rep].percent_visible >= 1.0 :
-				buttons[cur_rep].get_node("Energy").visible = \
-				   GameState.reponse_cost_energy(GameState.le_dialogue.possible_reponses[cur_rep+1])
-				buttons[cur_rep].set_disabled(false)
+				var e = GameState.reponse_cost_energy(GameState.le_dialogue.possible_reponses[cur_rep+1])
+				buttons[cur_rep].get_node("Energy").visible = e
+				   
+				if GameState.energy <= 0 and e < 0 and buttons[cur_rep].get_node("Energy").visible:
+					buttons[cur_rep].set_disabled(true)
+				else:
+					buttons[cur_rep].set_disabled(false)
 				if cur_rep < nrep:
 					cur_rep += 1
 		else:
@@ -100,24 +104,30 @@ func set_description(id : String):
 	timer.stop()
 	npr_gauge.value = 1.0
 	interaction_question_on_screen = false
-	if id == "":
+	if id == "" or GameState.stress >= 100:
 		GameState.le_dialogue = null
 		GameState.text_menu_is_used = false
 		self.set_visible(false)
 		return
+	
+	var d : description = Interactions.lines[id]
+	
+	if d.energie_add < 0 and GameState.energy <= 0:
+		GameState.le_dialogue = null
+		GameState.text_menu_is_used = false
+		self.set_visible(false)
+		return
+	
 	GameState.text_menu_is_used = true
 	self.set_visible(true)
 	
-	var d : description = Interactions.lines[id]
-		
 	if d.energie_add > 0:
 		Fmod.play_one_shot("event:/UI/Energy_Fill", Skipp_Fmod_Errors)
 	elif d.energie_add < 0:
 		Fmod.play_one_shot("event:/UI/Energy_Use", Skipp_Fmod_Errors)
 	GameState.energy += d.energie_add
 	GameState.stress += d.stress_add
-	GameState.energy = min(GameState.energy, 3)
-	
+	GameState.energy = max(min(GameState.energy, 3), 0)
 	GameState.le_dialogue = d
 	$VBox/HBox/Dialog/VBox/Text.text = d.text
 	$VBox/HBox/Dialog/VBox/Text.percent_visible = 0.0

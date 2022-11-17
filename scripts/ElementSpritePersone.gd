@@ -1,5 +1,5 @@
 extends Area2D
-class_name ElementSprite
+class_name ElementSpritePersone
 
 export(bool) var is_usable = true
 export(bool) var has_limited_trys = true
@@ -39,7 +39,8 @@ func _input_event(_viewport, event, _shape_idx):
 		   and not GameState.text_menu_is_used:
 				GameState.place_manager.interact(name)
 				Fmod.play_one_shot("event:/UI/Click", Skipp_Fmod_Errors)
-				current_try+=1
+				if GameState.energy > 0:
+					current_try+=1
 	else:
 		for s in get_shinies():
 			s.visible = false

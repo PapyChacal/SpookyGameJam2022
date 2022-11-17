@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
+[ext_resource path="res://scenes/Elements/door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Elements/smartphone.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/Room/porte.png" type="Texture" id=3]
-[ext_resource path="res://assets/livre.png" type="Texture" id=5]
+[ext_resource path="res://scenes/Elements/book.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/Room/ordi_brille.png" type="Texture" id=6]
-[ext_resource path="res://assets/livre_brille.png" type="Texture" id=8]
 [ext_resource path="res://assets/Room/chambre.png" type="Texture" id=10]
 [ext_resource path="res://scripts/Locality/Room.gd" type="Script" id=13]
 [ext_resource path="res://scenes/ElementSprite.tscn" type="PackedScene" id=14]
@@ -20,25 +19,14 @@ scale = Vector2( 0.533327, 0.555562 )
 texture = ExtResource( 10 )
 centered = false
 
-[node name="door" parent="." instance=ExtResource( 14 )]
-position = Vector2( 854.672, 355.718 )
-has_limited_trys = false
-
-[node name="Sprite" type="Sprite" parent="door"]
-visible = false
-scale = Vector2( 0.533327, 0.555562 )
-texture = ExtResource( 3 )
-
-[node name="shiny1" type="Sprite" parent="door"]
-visible = false
-scale = Vector2( 0.533327, 0.555562 )
-texture = ExtResource( 3 )
+[node name="door" parent="." instance=ExtResource( 1 )]
+position = Vector2( 882.731, 331.317 )
+has_limited_trys = true
 
 [node name="computer" parent="." instance=ExtResource( 14 )]
 position = Vector2( 324.243, 451.633 )
 rotation = -0.0218948
 scale = Vector2( 0.75918, 1.15051 )
-has_limited_trys = false
 
 [node name="Sprite" type="Sprite" parent="computer"]
 visible = false
@@ -53,17 +41,8 @@ texture = ExtResource( 6 )
 [node name="smartphone" parent="." instance=ExtResource( 2 )]
 position = Vector2( 365.89, 352.043 )
 scale = Vector2( 0.5, 0.5 )
+must_disapear = false
 
-[node name="book" parent="." instance=ExtResource( 14 )]
+[node name="book" parent="." instance=ExtResource( 3 )]
 position = Vector2( 535.225, 297.743 )
-must_disapear = true
-
-[node name="Sprite" type="Sprite" parent="book"]
-scale = Vector2( 0.35794, 0.516887 )
-texture = ExtResource( 5 )
-
-[node name="shiny1" type="Sprite" parent="book"]
-visible = false
-position = Vector2( 0.75293, 1.71758 )
-scale = Vector2( 0.35794, 0.516887 )
-texture = ExtResource( 8 )
+must_disapear = false

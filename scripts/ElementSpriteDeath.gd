@@ -1,5 +1,5 @@
 extends Area2D
-class_name ElementSprite
+class_name ElementSpriteDeath
 
 export(bool) var is_usable = true
 export(bool) var has_limited_trys = true
@@ -37,8 +37,8 @@ func _input_event(_viewport, event, _shape_idx):
 		if can_click and event is InputEventMouseButton\
 		   and event.pressed and event.button_index == BUTTON_LEFT\
 		   and not GameState.text_menu_is_used:
-				GameState.place_manager.interact(name)
 				Fmod.play_one_shot("event:/UI/Click", Skipp_Fmod_Errors)
+				get_tree().change_scene('res://scenes/MainMenu.tscn')
 				current_try+=1
 	else:
 		for s in get_shinies():
@@ -81,4 +81,3 @@ func _on_mouse_exited():
 		for s in get_shinies():
 			s.visible = false
 	
-

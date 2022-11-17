@@ -29,6 +29,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/ElementSpriteNew.gd"
 }, {
+"base": "Area2D",
+"class": "ElementSpriteDeath",
+"language": "GDScript",
+"path": "res://scripts/ElementSpriteDeath.gd"
+}, {
+"base": "Area2D",
+"class": "ElementSpritePersone",
+"language": "GDScript",
+"path": "res://scripts/ElementSpritePersone.gd"
+}, {
 "base": "",
 "class": "FmodNative",
 "language": "NativeScript",
@@ -119,6 +129,8 @@ _global_script_class_icons={
 "ChoiceButton": "",
 "Choices": "",
 "ElementSprite": "",
+"ElementSpriteDeath": "",
+"ElementSpritePersone": "",
 "FmodNative": "",
 "Inventory": "",
 "PlaceManager": "",
