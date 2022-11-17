@@ -21,11 +21,13 @@ centered = false
 
 [node name="door" parent="." instance=ExtResource( 1 )]
 position = Vector2( 882.731, 331.317 )
+has_limited_trys = false
 
 [node name="computer" parent="." instance=ExtResource( 14 )]
 position = Vector2( 324.243, 451.633 )
 rotation = -0.0218948
 scale = Vector2( 0.75918, 1.15051 )
+has_limited_trys = false
 
 [node name="Sprite" type="Sprite" parent="computer"]
 visible = false
