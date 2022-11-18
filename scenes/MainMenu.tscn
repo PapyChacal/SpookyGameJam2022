@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Buttons/ValidateButton.gd" type="Script" id=1]
 [ext_resource path="res://assets/ecran accueuil.png" type="Texture" id=2]
 [ext_resource path="res://scripts/Buttons/PlayButton.gd" type="Script" id=3]
+[ext_resource path="res://scripts/Buttons/CreditsButton.gd" type="Script" id=4]
 
-[node name="Control" type="PanelContainer"]
+[node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -27,27 +28,36 @@ centered = false
 
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
 margin_left = 486.0
-margin_top = 253.0
+margin_top = 238.0
 margin_right = 524.0
-margin_bottom = 273.0
+margin_bottom = 258.0
 size_flags_horizontal = 4
 text = "Play"
 script = ExtResource( 3 )
 
 [node name="RestartButton" type="Button" parent="VBoxContainer"]
 margin_left = 476.0
-margin_top = 283.0
+margin_top = 268.0
 margin_right = 533.0
-margin_bottom = 303.0
+margin_bottom = 288.0
 size_flags_horizontal = 4
 text = "Restart"
 script = ExtResource( 3 )
 
+[node name="CreditsButton" type="Button" parent="VBoxContainer"]
+margin_left = 476.0
+margin_top = 298.0
+margin_right = 533.0
+margin_bottom = 318.0
+size_flags_horizontal = 4
+text = "Credits"
+script = ExtResource( 4 )
+
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 margin_left = 485.0
-margin_top = 313.0
+margin_top = 328.0
 margin_right = 525.0
-margin_bottom = 333.0
+margin_bottom = 348.0
 size_flags_horizontal = 4
 text = "Quit"
 script = ExtResource( 1 )

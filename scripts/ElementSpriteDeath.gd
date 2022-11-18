@@ -38,7 +38,7 @@ func _input_event(_viewport, event, _shape_idx):
 		   and event.pressed and event.button_index == BUTTON_LEFT\
 		   and not GameState.text_menu_is_used:
 				Fmod.play_one_shot("event:/UI/Click", Skipp_Fmod_Errors)
-				get_tree().change_scene('res://scenes/MainMenu.tscn')
+				GameState._unused_connect_warning = get_tree().change_scene('res://scenes/MainMenu.tscn')
 				current_try+=1
 	else:
 		for s in get_shinies():
