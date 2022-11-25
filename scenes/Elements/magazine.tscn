@@ -14,5 +14,4 @@ texture = ExtResource( 2 )
 
 [node name="shiny1" type="Sprite" parent="."]
 visible = false
-scale = Vector2( 1, 1 )
 texture = ExtResource( 3 )

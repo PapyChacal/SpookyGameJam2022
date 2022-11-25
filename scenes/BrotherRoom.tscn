@@ -25,6 +25,7 @@ centered = false
 position = Vector2( 466.73, 564.442 )
 
 [node name="brother" parent="." instance=ExtResource( 5 )]
+visible = false
 position = Vector2( 729.368, 402.023 )
 
 [node name="magazine" parent="." instance=ExtResource( 6 )]

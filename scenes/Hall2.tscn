@@ -1,9 +1,9 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/Locality/Hall2.gd" type="Script" id=1]
 [ext_resource path="res://assets/Hall_staircase/SP_coul_1.png" type="Texture" id=2]
 [ext_resource path="res://assets/Hall_staircase/SP_coul_1_fog.png" type="Texture" id=3]
-[ext_resource path="res://assets/People/brother.png" type="Texture" id=4]
+[ext_resource path="res://scenes/Elements/brother.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Elements/brother_door_enter.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/ElementSprite.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/Hall_staircase/escalier.png" type="Texture" id=7]
@@ -14,7 +14,6 @@
 [ext_resource path="res://assets/Hall_staircase/plante_shiny.png" type="Texture" id=12]
 [ext_resource path="res://assets/Hall_staircase/porte_cuisine.png" type="Texture" id=13]
 [ext_resource path="res://assets/Hall_staircase/porte_cuisine_shiny.png" type="Texture" id=14]
-[ext_resource path="res://scripts/ElementSpritePersone.gd" type="Script" id=15]
 
 [node name="Hall2" type="Control"]
 script = ExtResource( 1 )
@@ -32,13 +31,8 @@ position = Vector2( 94.5757, 339.179 )
 is_usable = true
 has_limited_trys = true
 
-[node name="brother" parent="." instance=ExtResource( 6 )]
+[node name="brother" parent="." instance=ExtResource( 4 )]
 position = Vector2( 198.889, 394.244 )
-script = ExtResource( 15 )
-
-[node name="Sprite" type="Sprite" parent="brother"]
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 4 )
 
 [node name="plant" parent="." instance=ExtResource( 6 )]
 position = Vector2( 317.317, 376.467 )

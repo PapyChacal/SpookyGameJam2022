@@ -1,5 +1,4 @@
 extends Control
-class_name PlaceManager
 
 var scenes : Dictionary = {
 	'Room'     : preload("res://scenes/Room.tscn"),
