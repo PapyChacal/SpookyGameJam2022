@@ -17,7 +17,7 @@ func init_room():
 	}
 	place.inter = ''
 
-func _on_toilet_input_event(_viewport, _event, _shape_idx):
+func _process(_delta):
 	if GameState.energy == 3:
 		$toilet.is_usable = false
 	else:

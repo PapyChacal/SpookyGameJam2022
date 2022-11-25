@@ -11,7 +11,7 @@
     "text": "OK... Time to go.\n(Press space to continue)",
     "stress_add": 0,
     "energie_add": 0,
-    "next": ""
+    "next": "interpelation$$$$"
   },  
   
   "Des0": {
@@ -69,7 +69,7 @@
     "text": "Oh, ask your brother to give you some money for today. Please don't skip lunch!",
     "stress_add": 0,
     "energie_add": 0,
-    "next": ""
+    "next": "interpelation$$$$"
   },
 "Des8": {
     "personne_parlant": "",
@@ -190,21 +190,21 @@
     "text": "Pfff... If you keep ignoring people, you won't make any friends, you know",
     "stress_add": 10,
     "energie_add": 0,
-    "next": ""
+    "next": "interpelation$$$$"
   },
   "AA1": {
     "personne_parlant": "Tom",
     "text": "Wow... Feels weird when you're confident like that.",
     "stress_add": 0,
     "energie_add": -1,
-    "next": ""
+    "next": "interpelation$$$$"
   },
   "BB1": {
     "personne_parlant": "Tom",
     "text": "You little...!!!",
     "stress_add": 0,
     "energie_add": 0,
-    "next": ""
+    "next": "interpelation$$$$"
   },
 
   "Dial1": {

@@ -7,6 +7,8 @@ var location : String = 'Room'
 var place_manager : PlaceManager
 var choices : Choices
 
+var current_dial_descr : String = ''
+
 var picked_item : SceneItem = null
 var inventory : Inventory
 
@@ -38,6 +40,9 @@ func is_special(action : String):
 	
 func is_element(action : String):
 	return action.substr(0, 8) == 'element#'
+
+func is_interpelation(action : String):
+	return action.substr(0, 14) == 'interpelation$'
 
 func trigger_action(action : String, make_sound = true):
 	if is_goto(action):
@@ -79,7 +84,15 @@ func trigger_action(action : String, make_sound = true):
 			place_manager.places[change_element[1]].elements[change_element[2]] = \
 			   change_element[3]
 		trigger_action(change_element[4])
-		
+	elif is_interpelation(action):
+		var change_element = action.split('$')
+		if change_element[1] == "":
+			place_manager.places[place_manager.get_child(0).name].inter = \
+			   change_element[2]
+		else:
+			place_manager.places[change_element[1]].inter = \
+			   change_element[2]
+		trigger_action(change_element[3])
 	else:
 		choices.set_description(action)
 
@@ -89,22 +102,23 @@ func validate_interaction():
 func validate_question():
 	choices.question_is_read()
 
-func reponse_cost_energy(r : reponse):
-	var action = r.next
+func reponse_cost_energy(action : String):
+	
 	if is_goto(action) or action == "":
 		return 0
 	
 	if is_element(action):
 		var change_element = action.split('#')
 		action = change_element[4]
-		if is_goto(action) or action == "":
-			return 0
-	
-	if is_special(action):
+		return reponse_cost_energy(action)
+	elif is_special(action):
 		var what_special = action.split(':')
 		action = what_special[3]
-		if is_goto(action) or action == "":
-			return 0
+		return reponse_cost_energy(action)
+	elif is_interpelation(action):
+		var change_interpelation = action.split('$')
+		action = change_interpelation[3]
+		return reponse_cost_energy(action)
 	
 	return Interactions.lines[action].energie_add
 
@@ -114,18 +128,20 @@ func add_item(item : SceneItem):
 func text_apparing(current_object, speed = text_speed):
 	var unit_of_char =  1.0 / current_object.text.length() / speed
 	current_object.percent_visible += unit_of_char
+func reset():
+	energy = 3
+	stress = 0.0
+	picked_item = null
+	toilet_whas_not_used = true
+	brother_is_not_here = false
+	brother_is_in_his_room = false
+	smartphone_whas_not_used = true
+	book_whas_not_used = true
+	place_manager.init()
 
 func death():
 	if GameState.stress >= 100:
-		energy = 3
-		stress = 0.0
-		picked_item = null
-		toilet_whas_not_used = true
-		brother_is_not_here = false
-		brother_is_in_his_room = false
-		smartphone_whas_not_used = true
-		book_whas_not_used = true
-		place_manager.init()
+		reset()
 		place_manager.go_to('Death')
 		choices.set_description("DesDeath")
 

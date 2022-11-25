@@ -1,6 +1,6 @@
 extends Control
 
-var scenes : Dictionary = {
+onready var scenes : Dictionary = {
 	'Room'     : preload("res://scenes/Room.tscn"),
 	'Hall1'    : preload("res://scenes/Hall1.tscn"),
 	'Hall2'    : preload("res://scenes/Hall2.tscn"),
@@ -9,7 +9,7 @@ var scenes : Dictionary = {
 	'Death'       : preload("res://scenes/Death.tscn")
 }
 
-var places : Dictionary = {
+onready var places : Dictionary = {
 	'Room' : place.new(),
 	'Hall1': place.new(),
 	'Hall2': place.new(),
@@ -30,10 +30,10 @@ func interact(name : String):
 
 func _ready():
 	GameState._unused_connect_warning = connect("trigger_action", GameState, "trigger_action")
+	GameState.place_manager = self
 	init()
 
 func init():
-	GameState.place_manager = self
 	for p in scenes.values():
 		var inst = p.instance()
 		inst.init_room()
@@ -47,8 +47,8 @@ func go_to(place : String):
 		remove_child(c)
 		c.queue_free()
 	add_child(inst)
-	var interpelation = GameState.place_manager.places[place].inter
-	if interpelation != '':
-		GameState.place_manager.places[place].inter = ''
+	var interpelation = places[place].inter
+	if GameState.current_dial_descr != '':
+		interpelation = GameState.current_dial_descr
 	
 	GameState.trigger_action(interpelation)
