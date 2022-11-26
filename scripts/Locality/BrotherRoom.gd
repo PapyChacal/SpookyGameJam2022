@@ -13,3 +13,6 @@ func init_room():
 		'brother_door_go_out' : 'goto:Hall2',
 	}
 	place.inter = ''
+
+func _process(_delta):
+	GameState.brother_is_in_his_room = $brother.visible

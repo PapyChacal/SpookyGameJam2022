@@ -20,7 +20,7 @@ var text_menu_is_used : bool
 
 var toilet_whas_not_used : bool = true
 
-var brother_is_not_here : bool = false
+var brother_is_here : bool = true
 
 var brother_is_in_his_room : bool = false
 
@@ -44,6 +44,13 @@ func is_element(action : String):
 func is_interpelation(action : String):
 	return action.substr(0, 14) == 'interpelation$'
 
+func is_apear_disapear(action : String):
+	return action.substr(0, 15) == 'apear_disapear*'
+
+func is_usable_unusable(action : String):
+	return action.substr(0, 16) == 'usable_unusable!'
+	
+
 func trigger_action(action : String, make_sound = true):
 	if is_goto(action):
 		var where_goto = action.substr(5)
@@ -65,16 +72,39 @@ func trigger_action(action : String, make_sound = true):
 			Fmod.play_one_shot("event:/Environment/Radio_On", Skipp_Fmod_Errors)
 			if what_special[2] == 'music':
 				Fmod.play_one_shot("event:/Environment/Radio_Music", Skipp_Fmod_Errors)
-		elif what_special[1] == 'brother_disapear':
-			brother_is_not_here = true
-			place_manager.get_child(0).get_node("brother").must_disapear = true
-			place_manager.get_child(0).get_node("brother").visible = false
-			place_manager.get_child(0).get_node("brother_door_enter").is_usable = true
-		elif what_special[1] == 'brother_apear':
-			brother_is_in_his_room = true
-			place_manager.get_child(0).get_node("brother").visible = true
-			place_manager.get_child(0).get_node("brother").must_disapear = false
 		trigger_action(what_special[3])
+	elif is_apear_disapear(action):
+		var what_apear_disapear = action.split('*')
+		var what_apear
+		var what_disapear
+		if what_apear_disapear[2] != "":
+			what_apear = what_apear_disapear[2].split(',')
+		if what_apear_disapear[3] != "":
+			what_disapear = what_apear_disapear[3].split(',')
+		if what_apear_disapear[1] == "":
+			if what_apear_disapear[2] != "":
+				for apear in what_apear:
+					place_manager.get_child(0).get_node(apear).visible = true
+			if what_apear_disapear[3] != "":
+				for disapear in what_disapear:
+					place_manager.get_child(0).get_node(disapear).visible = false
+		trigger_action(what_apear_disapear[4])
+	elif is_usable_unusable(action):
+		var what_usable_unusable = action.split('!')
+		var what_usable
+		var what_unusable
+		if what_usable_unusable[2] != "":
+			what_usable = what_usable_unusable[2].split(',')
+		if what_usable_unusable[3] != "":
+			what_unusable = what_usable_unusable[3].split(',')
+		if what_usable_unusable[1] == "":
+			if what_usable_unusable[2] != "":
+				for usable in what_usable:
+					place_manager.get_child(0).get_node(usable).is_usable = true
+			if what_usable_unusable[3] != "":
+				for unusable in what_unusable:
+					place_manager.get_child(0).get_node(unusable).is_usable = false
+		trigger_action(what_usable_unusable[4])
 	elif is_element(action):
 		var change_element = action.split('#')
 		if change_element[1] == "":
@@ -85,22 +115,19 @@ func trigger_action(action : String, make_sound = true):
 			   change_element[3]
 		trigger_action(change_element[4])
 	elif is_interpelation(action):
-		var change_element = action.split('$')
-		if change_element[1] == "":
+		var change_interpelation = action.split('$')
+		if change_interpelation[1] == "":
 			place_manager.places[place_manager.get_child(0).name].inter = \
-			   change_element[2]
+			   change_interpelation[2]
+			print(place_manager.places[place_manager.get_child(0).name].inter)
 		else:
-			place_manager.places[change_element[1]].inter = \
-			   change_element[2]
-		trigger_action(change_element[3])
+			place_manager.places[change_interpelation[1]].inter = \
+			   change_interpelation[2]
+		trigger_action(change_interpelation[3])
 	else:
 		choices.set_description(action)
 
-func validate_interaction():
-	choices.interaction_is_read()
 
-func validate_question():
-	choices.question_is_read()
 
 func reponse_cost_energy(action : String):
 	
@@ -119,6 +146,14 @@ func reponse_cost_energy(action : String):
 		var change_interpelation = action.split('$')
 		action = change_interpelation[3]
 		return reponse_cost_energy(action)
+	elif is_apear_disapear(action):
+		var what_apear_disapear = action.split('*')
+		action = what_apear_disapear[4]
+		return reponse_cost_energy(action)
+	elif is_usable_unusable(action):
+		var what_usable_unusable = action.split('!')
+		action = what_usable_unusable[4]
+		return reponse_cost_energy(action)
 	
 	return Interactions.lines[action].energie_add
 
@@ -133,7 +168,7 @@ func reset():
 	stress = 0.0
 	picked_item = null
 	toilet_whas_not_used = true
-	brother_is_not_here = false
+	brother_is_here = true
 	brother_is_in_his_room = false
 	smartphone_whas_not_used = true
 	book_whas_not_used = true

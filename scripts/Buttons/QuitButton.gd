@@ -1,4 +1,4 @@
-extends SoundButton
+extends Button
 class_name QuitButton
 # Self-explanatory ?
 

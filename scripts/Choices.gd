@@ -44,20 +44,29 @@ func _process(_delta):
 		interaction_question_on_screen = true
 
 	if is_question and show_responses:
-		if texts[cur_rep].percent_visible < 1.0:
+		if texts[cur_rep].percent_visible < 1.0 :
 			GameState.text_apparing(texts[cur_rep])
 			if texts[cur_rep].percent_visible >= 1.0 :
 				var e = GameState.reponse_cost_energy(\
 				GameState.le_dialogue.possible_reponses[cur_rep+1].next)
 				buttons[cur_rep].get_node("Energy").visible = e
 				   
-				if GameState.energy <= 0 and e < 0 and buttons[cur_rep].get_node("Energy").visible:
+				if GameState.energy <= 0 and e != 0 :
 					buttons[cur_rep].set_disabled(true)
 				else:
 					buttons[cur_rep].set_disabled(false)
 				if cur_rep < nrep:
 					cur_rep += 1
 		else:
+			for cur_rep in range(0,nrep+1):
+				var e = GameState.reponse_cost_energy(\
+				GameState.le_dialogue.possible_reponses[cur_rep+1].next)
+				buttons[cur_rep].get_node("Energy").visible = e
+				   
+				if GameState.energy <= 0 and e != 0 :
+					buttons[cur_rep].set_disabled(true)
+				else:
+					buttons[cur_rep].set_disabled(false)
 			$VBox/VBoxContainer/NPRButton.set_disabled(false)
 			if timer.is_stopped():
 				timer.start(answer_time)
@@ -65,14 +74,19 @@ func _process(_delta):
 				npr_gauge.value = timer.time_left / answer_time
 
 func question_is_read():
+	$VBox/HBoxTop/Panel/Label.percent_visible = 1.0
+	$VBox/HBox/Dialog/VBox/Text.percent_visible = 1.0
 	if interaction_question_on_screen :
+		if show_responses:
+			for text in texts:
+				text.percent_visible = 1.0
 		show_responses = true
-		Fmod.play_one_shot("event:/UI/Validate", Skipp_Fmod_Errors)
 
 func interaction_is_read():
+	$VBox/HBoxTop/Panel/Label.percent_visible = 1.0
+	$VBox/HBox/Dialog/VBox/Text.percent_visible = 1.0
 	if interaction_question_on_screen :
-		Fmod.play_one_shot("event:/UI/Validate", Skipp_Fmod_Errors)
-		self.set_description("")
+		GameState.trigger_action(GameState.le_dialogue.next)
 
 func _on_choice(choice : int):
 	timer.stop()

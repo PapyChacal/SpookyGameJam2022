@@ -91,4 +91,3 @@ texture = ExtResource( 14 )
 scale = Vector2( 0.533, 0.555531 )
 texture = ExtResource( 3 )
 centered = false
-[connection signal="input_event" from="toilet" to="." method="_on_toilet_input_event"]

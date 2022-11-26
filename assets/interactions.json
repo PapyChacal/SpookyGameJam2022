@@ -175,7 +175,7 @@
       },
       {
         "text": "Yes!",
-        "next": "element##magazine##special:brother_apear::Des9:#"
+        "next": "element##magazine##apear_disapear**brother**Des9*#"
       },
       {
         "text": "No...",
@@ -440,7 +440,7 @@
     "text": "F*ck, really?! I'll have a look.",
     "stress_add": 0,
     "energie_add": 0,
-    "next": "element##brother##special:brother_disapear:::#"
+    "next": "element##brother##apear_disapear***brother*usable_unusable!!brother_door_enter!!!*#"
   },
 
   "Dial6": {

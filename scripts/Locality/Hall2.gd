@@ -2,8 +2,8 @@ extends Control
 
 func update_room():
 	$toilet.is_usable = GameState.toilet_whas_not_used
-	$brother.visible = not GameState.brother_is_not_here
-	$brother_door_enter.is_usable = GameState.brother_is_not_here
+	$brother.visible = GameState.brother_is_here
+	$brother_door_enter.is_usable = not GameState.brother_is_here
 
 func init_room():
 	var place = GameState.place_manager.places[name]
@@ -18,6 +18,7 @@ func init_room():
 	place.inter = ''
 
 func _process(_delta):
+	GameState.brother_is_here = $brother.visible
 	if GameState.energy == 3:
 		$toilet.is_usable = false
 	else:
