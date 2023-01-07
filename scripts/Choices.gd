@@ -11,7 +11,8 @@ onready var texts : Array = [
 	$VBox/HBox/HBox/Choice2/VBox/Text,
 	$VBox/HBox/HBox/Choice3/VBox/Text,
 ]
-
+onready var main_text = $VBox/HBox/Dialog/VBox/Text
+onready var person_speaking = $VBox/HBoxTop/Panel/Label
 onready var npr_gauge = $VBox/VBoxContainer/NPRGauge
 onready var npr_button = $VBox/VBoxContainer/NPRButton
 
@@ -113,9 +114,9 @@ func _on_choice3():
 	Fmod.play_one_shot("event:/UI/Validate", Skipp_Fmod_Errors)
 	emit_signal("choice_made", 3)
 	
-func set_description(id : String):
+func set_description(id : String) -> bool:
 	if not interaction_question_on_screen:
-		return
+		return false
 	timer.stop()
 	npr_gauge.value = 1.0
 	interaction_question_on_screen = false
@@ -125,7 +126,7 @@ func set_description(id : String):
 		GameState.le_dialogue = null
 		GameState.text_menu_is_used = false
 		self.set_visible(false)
-		return
+		return false
 	var already_same_dial = GameState.current_dial_descr == id
 	GameState.current_dial_descr = id
 	var d : description = Interactions.lines[id]
@@ -143,11 +144,11 @@ func set_description(id : String):
 		GameState.energy = max(min(GameState.energy, 3), 0)
 		GameState.stress = max(min(GameState.stress, 100), 0)
 	GameState.le_dialogue = d
-	$VBox/HBox/Dialog/VBox/Text.text = d.text
-	$VBox/HBox/Dialog/VBox/Text.percent_visible = 0.0
+	main_text.text = d.text
+	main_text.percent_visible = 0.0
 	if d.personne_parlant != "":
-		$VBox/HBoxTop/Panel/Label.text = d.personne_parlant
-		$VBox/HBoxTop/Panel/Label.percent_visible = 0.0
+		person_speaking.text = d.personne_parlant
+		person_speaking.percent_visible = 0.0
 		$VBox/HBoxTop/Panel.set_visible(true)
 	else:
 		$VBox/HBoxTop/Panel.set_visible(false)
@@ -168,3 +169,4 @@ func set_description(id : String):
 		cur_rep = 0
 	$VBox/VBoxContainer.set_visible(is_question)
 	$VBox/HBox/HBox.set_visible(is_question)
+	return true

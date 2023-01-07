@@ -13,6 +13,10 @@ func _input(_event):
 		GameState._unused_connect_warning = get_tree().change_scene("res://scenes/MainMenu.tscn")
 
 func _process(_delta):
+	GameState.death()
+	if GameState.stress >= 40.0 and GameState.stress < 100.0:
+		GameState.stress += 0.0001
+		
 	var d = GameState.le_dialogue
 	if d != null \
 	   and Input.is_action_just_released("ui_select"):

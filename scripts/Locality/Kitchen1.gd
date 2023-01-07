@@ -10,7 +10,7 @@ func init_room():
 		'mother'         : 'Des61',
 		'kitchen_door'   : 'goto:Hall2',
 		'chocolat_small' : 'Dial3',
-		'radio'          : 'special:radio::Des6',
+		'radio'          : 'special:radio,Des6',
 		'trash_can'      : 'Des8'
 		
 	}
