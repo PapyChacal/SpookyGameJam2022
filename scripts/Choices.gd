@@ -59,15 +59,15 @@ func _process(_delta):
 				if cur_rep < nrep:
 					cur_rep += 1
 		else:
-			for cur_rep in range(0,nrep+1):
+			for cur_rep2 in range(0,nrep+1):
 				var e = GameState.reponse_cost_energy(\
-				GameState.le_dialogue.possible_reponses[cur_rep+1].next)
-				buttons[cur_rep].get_node("Energy").visible = e
+				GameState.le_dialogue.possible_reponses[cur_rep2+1].next)
+				buttons[cur_rep2].get_node("Energy").visible = e
 				   
 				if GameState.energy <= 0 and e != 0 :
-					buttons[cur_rep].set_disabled(true)
+					buttons[cur_rep2].set_disabled(true)
 				else:
-					buttons[cur_rep].set_disabled(false)
+					buttons[cur_rep2].set_disabled(false)
 			$VBox/VBoxContainer/NPRButton.set_disabled(false)
 			if timer.is_stopped():
 				timer.start(answer_time)
@@ -141,6 +141,7 @@ func set_description(id : String) -> bool:
 			Fmod.play_one_shot("event:/UI/Energy_Use", Skipp_Fmod_Errors)
 		GameState.energy += d.energie_add
 		GameState.stress += d.stress_add
+# warning-ignore:narrowing_conversion
 		GameState.energy = max(min(GameState.energy, 3), 0)
 		GameState.stress = max(min(GameState.stress, 100), 0)
 	GameState.le_dialogue = d

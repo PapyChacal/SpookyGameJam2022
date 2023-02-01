@@ -44,7 +44,17 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/ElementSpritePersone.gd"
 }, {
-"base": "",
+"base": "VBoxContainer",
+"class": "FMOD_Config",
+"language": "GDScript",
+"path": "res://addons/fmod/fmod_config_window.gd"
+}, {
+"base": "Node2D",
+"class": "FmodEventEmitter",
+"language": "GDScript",
+"path": "res://addons/fmod/nodes/FmodEventEmitter.gd"
+}, {
+"base": "Node",
 "class": "FmodNative",
 "language": "NativeScript",
 "path": "res://addons/fmod/Fmod.gdns"
@@ -137,6 +147,8 @@ _global_script_class_icons={
 "ElementSprite": "",
 "ElementSpriteDeath": "",
 "ElementSpritePersone": "",
+"FMOD_Config": "",
+"FmodEventEmitter": "res://addons/fmod/nodes/fmod.svg",
 "FmodNative": "",
 "Inventory": "",
 "PlayButton": "",
@@ -158,11 +170,16 @@ _global_script_class_icons={
 
 [application]
 
-config/name="SpookyGameJam2022"
+config/name="Them"
+config/description="We are happy to present this prototype of \"Them\", an interactive fiction / point and click horrific game made with Godot.
+
+The player will guide our protagonist, dealing with social anxiety, throughout his/her first day of college. Manage your energy and your stress level well to survive!
+
+This prototype only contains the first steps of Chapter 1."
 run/main_scene="res://scenes/MainMenu.tscn"
-config/icon="res://assets/icone_2.png"
-config/macos_native_icon="res://assets/icone.icns"
-config/windows_native_icon="res://assets/icone.ico"
+config/icon="res://assets/icon.png"
+config/macos_native_icon="res://assets/icon.icns"
+config/windows_native_icon="res://assets/icon.ico"
 
 [autoload]
 
@@ -181,7 +198,6 @@ window/stretch/aspect="keep"
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 quality/intended_usage/framebuffer_allocation=0
 quality/intended_usage/framebuffer_allocation.mobile=0
 environment/default_environment="res://default_env.tres"
