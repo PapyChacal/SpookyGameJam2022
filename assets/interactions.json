@@ -48,7 +48,7 @@
     "text": "Time to take a break and breathe.",
     "stress_add": 0,
     "energie_add": 1,
-    "next": "special:toilet"
+    "next": "special#toilet"
     }, 
  "Des6": {
     "personne_parlant": "",
@@ -133,7 +133,7 @@
       },
       {
         "text": "Take the phone with you",
-        "next": "special:smartphone"
+        "next": "special#smartphone"
       },
       {
         "text": "Leave it here",
@@ -154,7 +154,7 @@
       },
       {
         "text": "Take the book with you",
-        "next": "special:book"
+        "next": "special#book"
       },
       {
         "text": "Leave it here",
@@ -175,7 +175,7 @@
       },
       {
         "text": "Yes!",
-        "next": "element::magazine:,apear:brother,Des9"
+        "next": "element::magazine:,apear:brother,element:Hall2:door_kitchen:goto#Kitchen2,Des9"
       },
       {
         "text": "No...",
@@ -258,11 +258,11 @@
     "possible_reponses": [
       {
         "text": "No answer",
-        "next": "special:music,CC2"
+        "next": "special#music,CC2"
       },
       {
         "text": "No, nice idea!",
-        "next": "special:music,AA2"
+        "next": "special#music,AA2"
       },
       {
           "text": "I really prefer silence.",

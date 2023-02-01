@@ -22,6 +22,8 @@ onready var timer : Timer = $Timer
 
 signal choice_made
 
+var launch_stress_des : bool = true
+
 var is_question : bool = false
 var nrep = 0
 var cur_rep = 0
@@ -115,6 +117,10 @@ func _on_choice3():
 	emit_signal("choice_made", 3)
 	
 func set_description(id : String) -> bool:
+	if GameState.stress_on and launch_stress_des:
+		launch_stress_des = false
+		GameState.trigger_action(GameState.stress_period_des)
+		return true
 	if not interaction_question_on_screen:
 		return false
 	timer.stop()

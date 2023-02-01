@@ -11,9 +11,6 @@
 
 [node name="BrotherRoom" type="Control"]
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="SP_ch_fr1" type="Sprite" parent="."]
 position = Vector2( 0, -1.36035 )

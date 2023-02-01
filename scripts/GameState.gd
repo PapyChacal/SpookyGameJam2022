@@ -4,6 +4,7 @@ var energy : int = 3
 var stress : float = 0.0
 var le_dialogue : description
 var location : String = 'Room'
+var stress_period_des : String = ''
 var place_manager : PlaceManager
 var choices : Choices
 
@@ -16,7 +17,7 @@ var _unused_connect_warning
 
 var _unused_bool_warning
 
-var not_already_stress_on_1 : bool = true
+var stress_on : bool = false
 
 var text_speed : float = 3
 
@@ -31,16 +32,17 @@ var brother_is_in_his_room : bool = false
 var smartphone_whas_not_used : bool = true
 var book_whas_not_used : bool = true
 
+
 func _ready():
 	Fmod.play_one_shot("event:/Musics/Music", Skipp_Fmod_Errors)
 	#Fmod.play_sound(Skipp_Fmod_Errors.sound_stress)
 	
 
 func is_goto(action : String):
-	return action.substr(0, 5) == 'goto:'
+	return action.substr(0, 5) == 'goto#'
 
 func is_special(action : String):
-	return action.substr(0, 8) == 'special:'
+	return action.substr(0, 8) == 'special#'
 	
 func is_element(action : String):
 	return action.substr(0, 8) == 'element:'
@@ -77,7 +79,7 @@ func trigger_action(action : String, make_sound = true):
 					Fmod.play_one_shot("event:/Environment/Transition_Door", Skipp_Fmod_Errors)
 			place_manager.go_to(where_goto)
 		elif is_special(one_action):
-			var what_special = one_action.split(':')
+			var what_special = one_action.split('#')
 			if what_special[1] == 'toilet':
 				toilet_whas_not_used = false
 			elif what_special[1] == 'book':
@@ -165,8 +167,8 @@ func reset():
 	brother_is_here = true
 	brother_is_in_his_room = false
 	smartphone_whas_not_used = true
+	stress_on = false
 	book_whas_not_used = true
-	not_already_stress_on_1 = true
 	place_manager.init()
 
 func death():
@@ -176,6 +178,12 @@ func death():
 		_unused_bool_warning = choices.set_description("DesDeath")
 
 func _process(_delta):
+	if stress < 40.00 and stress_on:
+		stress_on = false
+	death()
+	if stress >= 40.0 and stress < 100.0 and stress_on:
+		stress += (0.0003 * stress)
+		
 	#Fmod.set_event_parameter_by_name(Skipp_Fmod_Errors.sound_stress, "Stress", stress)
 	if picked_item != null:
 		picked_item.position = picked_item.get_global_mouse_position()
