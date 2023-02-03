@@ -8,7 +8,7 @@ func init_room():
 	var place = GameState.place_manager.places[name]
 	place.elements = {
 		'mother'         : GameState.place_manager.places['Kitchen1'].elements['mother'],
-		'kitchen_door'   : { 'inter' : 'goto:Hall2',
+		'kitchen_door'   : { 'inter' : 'goto:Hall4',
 						   'is_usable' : true,
 						   'limited_try' : false,
 						   'num_try' : 1,
