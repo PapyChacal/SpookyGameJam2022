@@ -3,7 +3,7 @@ extends Node
 onready var choices = $Choices
 
 func _ready():
-	GameState.trigger_action('goto#' + GameState.location, false)
+	GameState.trigger_action('goto:' + GameState.location, false)
 	set_process(true)
 
 func _input(_event):

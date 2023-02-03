@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scripts/Locality/Kitchen2.gd" type="Script" id=1]
+[ext_resource path="res://assets/Kitchen/SP_cuis_ normal_1.png" type="Texture" id=2]
+[ext_resource path="res://assets/Kitchen/SP_cuis_ normal_1_fog.png" type="Texture" id=3]
+[ext_resource path="res://scenes/Elements/mother.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Elements/poele.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Elements/kitchen_door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Elements/radio.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Elements/trash_can.tscn" type="PackedScene" id=9]
+
+[node name="Kitchen2" type="Control"]
+margin_left = -1.71478
+margin_right = -1.71478
+script = ExtResource( 1 )
+
+[node name="SP_cuis_ normal_1" type="Sprite" parent="."]
+scale = Vector2( 0.533, 0.555572 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="kitchen_door" parent="." instance=ExtResource( 6 )]
+position = Vector2( 49.1127, 267.305 )
+
+[node name="mother" parent="." instance=ExtResource( 4 )]
+position = Vector2( 249.834, 386.781 )
+
+[node name="radio" parent="." instance=ExtResource( 8 )]
+position = Vector2( 407.175, 323.623 )
+
+[node name="trash_can" parent="." instance=ExtResource( 9 )]
+position = Vector2( 730.195, 524.101 )
+
+[node name="poele" parent="." instance=ExtResource( 5 )]
+position = Vector2( 653.715, 389 )
+is_usable = false
+
+[node name="SP_cuis_ normal_1_fog" type="Sprite" parent="."]
+position = Vector2( -3.70129, 0 )
+scale = Vector2( 0.533, 0.555572 )
+texture = ExtResource( 3 )
+centered = false

@@ -6,13 +6,6 @@ func update_room():
 func init_room():
 	var place = GameState.place_manager.places[name]
 	place.elements = {
-		'brother'      : { 'inter' : 'Dial6',
-						   'is_usable' : true,
-						   'limited_try' : true,
-						   'num_try' : 1,
-						   'set_num_try' : false,
-						   'disapear' : false,
-						   'visible' : true },
 		'staircase'    : { 'inter' : 'goto:Room',
 						   'is_usable' : true,
 						   'limited_try' : true,
@@ -28,20 +21,13 @@ func init_room():
 						   'set_num_try' : false,
 						   'disapear' : false,
 						   'visible' : true, },
-		'door_kitchen' : { 'inter' : 'goto:Kitchen1',
+		'door_kitchen' : { 'inter' : 'goto:Kitchen2',
 						   'is_usable' : true,
 						   'limited_try' : false,
 						   'num_try' : 1,
 						   'set_num_try' : false,
 						   'disapear' : false,
 						   'visible' : true, },
-		'brother_door_enter' : { 'inter' : 'goto:BrotherRoom',
-								 'is_usable' : false,
-								 'limited_try' : true,
-								 'num_try' : 1,
-								 'set_num_try' : false,
-								 'disapear' : false,
-								 'visible' : true, },
 	}
 	place.inter = ''
 

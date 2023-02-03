@@ -11,7 +11,7 @@
     "text": "OK... Time to go.\n(Press space to continue)",
     "stress_add": 0,
     "energie_add": 0,
-    "next": "interpelation::"
+    "next": "interpelation##"
   },  
   
   "Des0": {
@@ -48,7 +48,7 @@
     "text": "Time to take a break and breathe.",
     "stress_add": 0,
     "energie_add": 1,
-    "next": "special#toilet"
+    "next": ""
     }, 
  "Des6": {
     "personne_parlant": "",
@@ -62,14 +62,14 @@
     "text": "You know, it will be a day like every other. You'll be fine...",
     "stress_add": -10,
     "energie_add": -1,
-    "next": "element::mother:"
+    "next": "element##mother#"
     },
 "Des7": {
     "personne_parlant": "Mother",
     "text": "Oh, ask your brother to give you some money for today. Please don't skip lunch!",
     "stress_add": 0,
     "energie_add": 0,
-    "next": "interpelation::"
+    "next": "interpelation##"
   },
 "Des8": {
     "personne_parlant": "",
@@ -90,14 +90,14 @@
     "text": "I already told Mum you were such a sneaky rat. She's waiting for you. Go now.",
     "stress_add": 0,
     "energie_add": 0,
-    "next": ""
+    "next": "element##brother_door_go_out#goto:Hall3"
   },
 "Des11": {
     "personne_parlant": "Mother",
     "text": "You make me... so sad...",
     "stress_add": 0,
     "energie_add": 0,
-    "next": ""
+    "next": "goto:Kitchen3"
   },
 "Des12": {
     "personne_parlant": "",
@@ -133,7 +133,7 @@
       },
       {
         "text": "Take the phone with you",
-        "next": "special#smartphone"
+        "next": "no_visible::smartphone"
       },
       {
         "text": "Leave it here",
@@ -154,7 +154,7 @@
       },
       {
         "text": "Take the book with you",
-        "next": "special#book"
+        "next": "no_visible::book"
       },
       {
         "text": "Leave it here",
@@ -171,15 +171,15 @@
     "possible_reponses": [
       {
         "text": "No answer",
-        "next": "element::magazine:"
+        "next": "element##magazine#"
       },
       {
         "text": "Yes!",
-        "next": "element::magazine:,apear:brother,element:Hall2:door_kitchen:goto#Kitchen2,Des9"
+        "next": "element##magazine#,visible::brother,element##brother_door_go_out#goto:Hall4,Des9"
       },
       {
         "text": "No...",
-        "next": "element::magazine:"
+        "next": "element##magazine#,element##brother_door_go_out#goto:Hall4"
       }
     ]
   },
@@ -190,21 +190,21 @@
     "text": "Pfff... If you keep ignoring people, you won't make any friends, you know",
     "stress_add": 10,
     "energie_add": 0,
-    "next": "interpelation::"
+    "next": "interpelation##"
   },
   "AA1": {
     "personne_parlant": "Tom",
     "text": "Wow... Feels weird when you're confident like that.",
     "stress_add": 0,
     "energie_add": -1,
-    "next": "interpelation::"
+    "next": "interpelation##"
   },
   "BB1": {
     "personne_parlant": "Tom",
     "text": "You little...!!!",
     "stress_add": 0,
     "energie_add": 0,
-    "next": "interpelation::"
+    "next": "interpelation##"
   },
 
   "Dial1": {
@@ -258,11 +258,11 @@
     "possible_reponses": [
       {
         "text": "No answer",
-        "next": "special#music,CC2"
+        "next": "special:music,CC2"
       },
       {
         "text": "No, nice idea!",
-        "next": "special#music,AA2"
+        "next": "special:music,AA2"
       },
       {
           "text": "I really prefer silence.",
@@ -276,21 +276,21 @@
     "text": "Nice, just ignore your poor mother.",
     "stress_add": 0,
     "energie_add": 0,
-    "next": "element::chocolat_small:"
+    "next": "element##chocolat_small#"
   },
   "AA3": {
     "personne_parlant": "Mother",
     "text": "Well, sit with me, my love.",
     "stress_add": 0,
     "energie_add": 0,
-    "next": "element::chocolat_small:,Dial4"
+    "next": "element##chocolat_small#,Dial4"
   },
   "BB3": {
     "personne_parlant": "Mother",
     "text": "Fine, I don't take it personnally.",
     "stress_add": 0,
     "energie_add": -1,
-    "next": "element::chocolat_small:"
+    "next": "element##chocolat_small#"
   },
 
   "Dial3": {
@@ -426,21 +426,21 @@
     "text": "You're such a weirdo...",
     "stress_add": 0,
     "energie_add": 0,
-    "next": "element::brother:"
+    "next": "element##brother#"
   },
   "AA6": {
     "personne_parlant": "Tom",
     "text": "Ah ah yes, don't do anything stupid with it...And you should think about a part-time job to be less dependent on others.",
     "stress_add": 0,
     "energie_add": 0,
-    "next": "element::brother:"
+    "next": "element##brother#,element##door_kitchen#goto:Kitchen2"
   },
   "BB6": {
     "personne_parlant": "Tom",
     "text": "F*ck, really?! I'll have a look.",
     "stress_add": 0,
     "energie_add": 0,
-    "next": "element::brother:,disapear:brother,usable:brother_door_enter"
+    "next": "element##brother#,no_visible::brother,is_usable::brother_door_enter"
   },
 
   "Dial6": {
@@ -514,21 +514,21 @@
     "text": "I'm TIRED of your silence.",
     "stress_add": 10,
     "energie_add": 0,
-    "next": ""
+    "next": "interpelation##"
   },
   "AA8": {
     "personne_parlant": "Mother",
     "text": "I wanna hear from you today. We should call each other during your lunch break! And be kind to people and avoid strangers.",
     "stress_add": 0,
     "energie_add": 0,
-    "next": ""
+    "next": "interpelation##"
   },
   "BB8": {
     "personne_parlant": "Mother",
     "text": "This is really stupid. You should really consider taking it with you.",
     "stress_add": 10,
     "energie_add": 0,
-    "next": ""
+    "next": "interpelation##"
   },
 
   "Dial8": {
@@ -616,7 +616,7 @@
     "text": "AAAAAAAAHHHHH...",
     "stress_add": 0,
     "energie_add": -2,
-    "next": ""
+    "next": "is_usable:Kitchen2:poele,goto:Kitchen2"
   },
 
   "Dial10": {
