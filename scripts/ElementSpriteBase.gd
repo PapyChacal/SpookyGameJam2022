@@ -46,7 +46,7 @@ func _input_event(_viewport, event, _shape_idx):
 				Fmod.play_one_shot("event:/UI/Click", Skipp_Fmod_Errors)
 				if is_death:
 					GameState._unused_connect_warning = get_tree().change_scene('res://scenes/MainMenu.tscn')
-				
+					GameState.place_manager.go_to('Room')
 				if is_persone:
 					if GameState.energy > 0:
 						number_of_try-=1

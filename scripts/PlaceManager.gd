@@ -10,6 +10,7 @@ onready var scenes : Dictionary = {
 	'Hall3'    : preload("res://scenes/Hall3.tscn"),
 	'Kitchen2' : preload("res://scenes/Kitchen2.tscn"),
 	'Hall4'    : preload("res://scenes/Hall4.tscn"),
+	'Kitchen3' : preload("res://scenes/Kitchen3.tscn"),
 }
 
 onready var places : Dictionary = {
@@ -22,6 +23,7 @@ onready var places : Dictionary = {
 	'Hall3': place.new(),
 	'Kitchen2': place.new(),
 	'Hall4': place.new(),
+	'Kitchen3': place.new(),
 }
 
 signal trigger_action

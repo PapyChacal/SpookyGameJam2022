@@ -1,6 +1,7 @@
 extends Control
 
 func update_room():
+	GameState.place_manager.places['Room'].elements['door']['inter'] = 'goto:Hall4'
 	pass
 
 func init_room():

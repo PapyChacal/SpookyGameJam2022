@@ -13,9 +13,6 @@
 margin_left = -1.71478
 margin_right = -1.71478
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="SP_cuis_ normal_1" type="Sprite" parent="."]
 scale = Vector2( 0.533, 0.555572 )

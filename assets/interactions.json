@@ -609,14 +609,14 @@
     "text": "OH I THINK IT, YOU LITTLE SH*T!!!!!",
     "stress_add": 0,
     "energie_add": 0,
-    "next": "Des13"
+    "next": "is_usable::s_poele,Des13"
   },
   "BB10": {
     "personne_parlant": "Mother",
     "text": "AAAAAAAAHHHHH...",
     "stress_add": 0,
     "energie_add": -2,
-    "next": "is_usable:Kitchen2:poele,goto:Kitchen2"
+    "next": "special:stress_off,is_usable:Kitchen2:poele,goto:Kitchen2"
   },
 
   "Dial10": {
@@ -646,14 +646,14 @@
     "text": "YOUR. SILENCE. ANNOYS. MEEEEEEEEEEEEEEEEEE!!!!!!!!!!!",
     "stress_add": 10,
     "energie_add": 0,
-    "next": "Des13"
+    "next": "is_usable::s_poele,Des13"
   },
   "AA11": {
     "personne_parlant": "Mother",
     "text": "AH AH AH AH AH DON'T PRETEND TO BE BRAVE!!!",
     "stress_add": 0,
     "energie_add": -1,
-    "next": "Des13"
+    "next": "is_usable::s_poele,Des13"
   },
   
   "Dial11": {

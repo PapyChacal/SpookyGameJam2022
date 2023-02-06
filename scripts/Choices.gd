@@ -62,6 +62,7 @@ func _process(_delta):
 					cur_rep += 1
 		else:
 			for cur_rep2 in range(0,nrep+1):
+				print(nrep)
 				var e = GameState.reponse_cost_energy(\
 				GameState.le_dialogue.possible_reponses[cur_rep2+1].next)
 				buttons[cur_rep2].get_node("Energy").visible = e
@@ -119,6 +120,7 @@ func _on_choice3():
 func set_description(id : String) -> bool:
 	if GameState.stress_on and launch_stress_des:
 		launch_stress_des = false
+		interaction_question_on_screen = true
 		GameState.trigger_action(GameState.stress_period_des)
 		return true
 	if not interaction_question_on_screen:

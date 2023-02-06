@@ -10,9 +10,6 @@
 
 [node name="Room" type="Control"]
 script = ExtResource( 13 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="room_background" type="Sprite" parent="."]
 scale = Vector2( 0.533327, 0.555562 )

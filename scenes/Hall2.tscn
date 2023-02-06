@@ -17,9 +17,6 @@
 
 [node name="Hall2" type="Control"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="hall_background" type="Sprite" parent="."]
 scale = Vector2( 0.533, 0.555531 )

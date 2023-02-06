@@ -93,6 +93,8 @@ func trigger_action(action : String, make_sound = true):
 			if what_special[1] == 'radio':
 				if OS.has_feature("standalone"):
 					Fmod.play_one_shot("event:/Environment/Radio_On", Skipp_Fmod_Errors)
+			elif what_special[1] == 'stress_off':
+				GameState.stress = 30.00
 			elif what_special[1] == 'music':
 				if OS.has_feature("standalone"):
 					Fmod.play_one_shot("event:/Environment/Radio_On", Skipp_Fmod_Errors)
