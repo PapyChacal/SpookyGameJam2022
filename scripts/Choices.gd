@@ -62,7 +62,6 @@ func _process(_delta):
 					cur_rep += 1
 		else:
 			for cur_rep2 in range(0,nrep+1):
-				print(nrep)
 				var e = GameState.reponse_cost_energy(\
 				GameState.le_dialogue.possible_reponses[cur_rep2+1].next)
 				buttons[cur_rep2].get_node("Energy").visible = e
@@ -138,7 +137,6 @@ func set_description(id : String) -> bool:
 	var already_same_dial = GameState.current_dial_descr == id
 	GameState.current_dial_descr = id
 	var d : description = Interactions.lines[id]
-	
 	
 	GameState.text_menu_is_used = true
 	self.set_visible(true)

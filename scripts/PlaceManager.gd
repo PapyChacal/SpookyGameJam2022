@@ -56,7 +56,7 @@ func go_to(place : String):
 		c.queue_free()
 	add_child(inst)
 	var interpelation = places[place].inter
-	if GameState.current_dial_descr != '' and interpelation != '':
+	if (not GameState.stress_on) and GameState.current_dial_descr != '' and interpelation != '':
 		interpelation = GameState.current_dial_descr
 	
 	GameState.trigger_action(interpelation)

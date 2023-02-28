@@ -40,7 +40,6 @@ func _process(_delta):
 	
 	GameState.place_manager.set_all_object_parameters_on_scene(self)
 	
-	print('is ' + var2str(GameState.place_manager.places[name].elements['toilet']['num_try']) + ' b')
 	if GameState.place_manager.places[name].elements['toilet']['num_try'] == 0 and\
 	   $toilet.number_of_try != 0:
 		GameState.place_manager.places[name].elements['toilet']['set_num_try'] = true

@@ -29,7 +29,7 @@ func init_room():
 						   'visible' : true, },
 		
 	}
-	place.inter = 'interpelation#Kitchen2#,Dial9'
+	place.inter = 'Dial9'
 
 func _process(_delta):
 	GameState.place_manager.set_all_object_parameters_on_scene(self)
