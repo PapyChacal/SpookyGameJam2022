@@ -423,10 +423,10 @@
 
   "CC6": {
     "personne_parlant": "Tom",
-    "text": "You're such a weirdo...",
+    "text": "You're such a weirdo... Take this and leave me alone.",
     "stress_add": 0,
     "energie_add": 0,
-    "next": "element##brother#"
+    "next": "element##brother#,element##door_kitchen#goto:Kitchen2"
   },
   "AA6": {
     "personne_parlant": "Tom",
